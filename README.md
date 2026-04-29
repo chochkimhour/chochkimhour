@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0f172a,45:1e3a8a,100:7c3aed&text=Choch%20Kimhour&fontColor=ffffff&fontSize=42&fontAlignY=35&desc=Backend%20Developer%20%7C%20API%20Builder%20%7C%20npm%20Package%20Creator&descAlignY=58&animation=fadeIn" alt="Choch Kimhour profile banner" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0f172a,45:1e3a8a,100:7c3aed&text=Choch%20Kimhour&fontColor=ffffff&fontSize=42&fontAlignY=35&desc=Backend%20Developer%20%7C%20API%20%26%20Bot%20%7C%20npm%20Package%20%7C%20Open%20Source&descAlignY=58&animation=fadeIn" alt="Choch Kimhour profile banner" />
+
+<img src="./assets/anime-coding-banner.svg" width="860" alt="Anime-inspired coding banner" />
 
 ### Clean backend systems, practical APIs, and developer-friendly tools
 
@@ -115,22 +117,18 @@ A CLI tool for generating clean and practical backend project structures.
 
 <div align="center">
 
-<table>
-  <tr>
-    <td width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=chochkimhour&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&card_width=420" alt="Choch Kimhour GitHub stats" />
-    </td>
-    <td width="50%">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=chochkimhour&layout=compact&theme=tokyonight&hide_border=true&card_width=420" alt="Choch Kimhour top languages" />
-    </td>
-  </tr>
-</table>
-
-<img src="https://streak-stats.demolab.com?user=chochkimhour&theme=tokyonight&hide_border=true&card_width=860" alt="Choch Kimhour GitHub streak" />
+<img width="420" src="https://github-readme-stats.vercel.app/api?username=chochkimhour&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&hide=contribs" alt="Choch Kimhour GitHub stats" />
+<img width="420" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chochkimhour&layout=compact&theme=tokyonight&hide_border=true" alt="Choch Kimhour top languages" />
 
 <br />
+<br />
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=chochkimhour&theme=tokyonight" alt="Choch Kimhour GitHub contribution summary" />
+<img width="860" src="https://streak-stats.demolab.com?user=chochkimhour&theme=tokyonight&hide_border=true" alt="Choch Kimhour GitHub streak" />
+
+<br />
+<br />
+
+<img width="860" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=chochkimhour&theme=tokyonight" alt="Choch Kimhour GitHub contribution summary" />
 
 </div>
 

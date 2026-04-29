@@ -1,0 +1,92 @@
+<svg width="1000" height="320" viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1000" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070B16"/>
+      <stop offset="0.5" stop-color="#101A3A"/>
+      <stop offset="1" stop-color="#241044"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="140" y1="42" x2="882" y2="285" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="0.52" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="490" y1="88" x2="840" y2="246" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="320" rx="24" fill="url(#bg)"/>
+  <path d="M0 238C112 203 194 274 314 238C442 200 492 106 626 114C755 122 826 216 1000 173V320H0V238Z" fill="#38BDF8" opacity="0.08"/>
+  <path d="M0 76C124 112 200 34 326 74C470 120 540 232 674 200C798 170 866 82 1000 116V0H0V76Z" fill="#A855F7" opacity="0.08"/>
+
+  <g filter="url(#glow)" opacity="0.9">
+    <path d="M90 58H910" stroke="url(#accent)" stroke-width="2"/>
+    <path d="M90 264H910" stroke="url(#accent)" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(92 64)">
+    <rect x="0" y="0" width="318" height="208" rx="24" fill="#0B1020" stroke="#253B75"/>
+    <circle cx="160" cy="76" r="47" fill="#F3C6A5"/>
+    <path d="M109 73C118 32 151 12 188 25C221 37 227 70 217 96C190 86 150 82 109 73Z" fill="#141827"/>
+    <path d="M115 67C130 34 165 24 199 36C188 15 138 10 116 46C110 55 108 65 109 74L115 67Z" fill="#1F2937"/>
+    <path d="M136 81C145 75 155 75 163 82" stroke="#111827" stroke-width="4" stroke-linecap="round"/>
+    <path d="M190 82C198 75 208 75 217 81" stroke="#111827" stroke-width="4" stroke-linecap="round"/>
+    <path d="M158 103C172 113 189 113 203 103" stroke="#7C2D12" stroke-width="4" stroke-linecap="round"/>
+    <path d="M123 120C151 146 197 146 227 120L255 198H94L123 120Z" fill="#1D4ED8"/>
+    <path d="M136 134C153 150 196 151 215 134" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/>
+    <path d="M91 158C62 173 48 197 40 224" stroke="#F3C6A5" stroke-width="18" stroke-linecap="round"/>
+    <path d="M238 158C270 173 283 197 292 224" stroke="#F3C6A5" stroke-width="18" stroke-linecap="round"/>
+    <path d="M76 200L128 183" stroke="#38BDF8" stroke-width="8" stroke-linecap="round"/>
+    <path d="M242 183L292 200" stroke="#8B5CF6" stroke-width="8" stroke-linecap="round"/>
+    <rect x="82" y="182" width="170" height="76" rx="10" fill="#111827" stroke="#334155"/>
+    <path d="M122 218H212" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M150 234H184" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(464 72)">
+    <rect x="0" y="0" width="438" height="190" rx="18" fill="url(#screen)" stroke="#243B75"/>
+    <rect x="0" y="0" width="438" height="34" rx="18" fill="#111A33"/>
+    <circle cx="25" cy="17" r="5" fill="#F87171"/>
+    <circle cx="45" cy="17" r="5" fill="#FBBF24"/>
+    <circle cx="65" cy="17" r="5" fill="#34D399"/>
+    <text x="92" y="23" fill="#94A3B8" font-family="Consolas, 'Courier New', monospace" font-size="13">backend/api/routes.ts</text>
+
+    <g font-family="Consolas, 'Courier New', monospace" font-size="17">
+      <text x="30" y="68" fill="#38BDF8">export</text>
+      <text x="92" y="68" fill="#A78BFA">async</text>
+      <text x="150" y="68" fill="#38BDF8">function</text>
+      <text x="232" y="68" fill="#E5E7EB">createApi()</text>
+      <text x="334" y="68" fill="#E5E7EB">{</text>
+
+      <text x="54" y="100" fill="#E5E7EB">validate</text>
+      <text x="124" y="100" fill="#E5E7EB">(</text>
+      <text x="138" y="100" fill="#FBBF24">"request"</text>
+      <text x="230" y="100" fill="#E5E7EB">);</text>
+
+      <text x="54" y="132" fill="#E5E7EB">return</text>
+      <text x="118" y="132" fill="#34D399">response</text>
+      <text x="202" y="132" fill="#E5E7EB">.</text>
+      <text x="216" y="132" fill="#38BDF8">ok</text>
+      <text x="242" y="132" fill="#E5E7EB">(data);</text>
+
+      <text x="30" y="164" fill="#E5E7EB">}</text>
+      <text x="70" y="164" fill="#64748B">// clean, practical, reusable</text>
+    </g>
+  </g>
+
+  <g opacity="0.8">
+    <path d="M426 116L444 134L426 152" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M934 118L916 136L934 154" stroke="#F472B6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M448 224H584" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M604 224H722" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+    <path d="M742 224H882" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
