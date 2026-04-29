@@ -39,64 +39,72 @@ My backend experience includes building modules for a School Management System, 
 | Area | Technologies |
 | --- | --- |
 | Languages | ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000) |
-| Backend | ![Grails](https://img.shields.io/badge/Grails-55AA33?style=flat-square&logo=grails&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-111827?style=flat-square&logo=express&logoColor=white) |
+| Backend | ![Grails](https://img.shields.io/badge/Grails-55AA33?style=flat-square&logo=grails&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-111827?style=flat-square&logo=express&logoColor=white) |
 | API Work | ![REST APIs](https://img.shields.io/badge/REST_APIs-2563EB?style=flat-square&logo=fastapi&logoColor=white) ![Middleware](https://img.shields.io/badge/Middleware-6366F1?style=flat-square) ![Validation](https://img.shields.io/badge/Validation-10B981?style=flat-square) ![Authentication](https://img.shields.io/badge/Authentication-F59E0B?style=flat-square) ![Logging](https://img.shields.io/badge/Logging-64748B?style=flat-square) |
-| Database | ![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white) ![Database Design](https://img.shields.io/badge/Database_Design-0F172A?style=flat-square&logo=databricks&logoColor=white) |
+| Database | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![Database Design](https://img.shields.io/badge/Database_Design-0F172A?style=flat-square&logo=databricks&logoColor=white) |
+| Messaging | ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white) |
+| Server / OS | ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=000) ![Server Basics](https://img.shields.io/badge/Server_Basics-0F172A?style=flat-square&logo=serverfault&logoColor=white) |
 | Tools | ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white) ![Docker Basics](https://img.shields.io/badge/Docker_Basics-2496ED?style=flat-square&logo=docker&logoColor=white) |
 
 ---
 
 ## Featured Projects / npm Packages
 
+<div align="center">
+
 <table>
   <tr>
-    <td width="33%" valign="top">
-      <h3>api-core-backend</h3>
-      <p>Backend API utilities for REST API responses, pagination, filtering, search, HTTP status handling, and Express middleware helpers.</p>
-      <p>
-        <a href="https://www.npmjs.com/package/api-core-backend">
-          <img src="https://img.shields.io/badge/npm-package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="api-core-backend npm package" />
-        </a>
-        <a href="{{GITHUB_URL}}/api-core-backend">
-          <img src="https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github&logoColor=white" alt="api-core-backend GitHub repository" />
-        </a>
-      </p>
+    <td width="50%" valign="top">
+      <a href="{{GITHUB_URL}}/api-core-backend">
+        <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username={{GITHUB_USERNAME}}&repo=api-core-backend&theme=tokyonight&hide_border=true" alt="api-core-backend repository card" />
+      </a>
+      <br />
+      <sub>REST response helpers, pagination, filtering, search, HTTP status utilities, and Express middleware.</sub>
+      <br /><br />
+      <a href="https://www.npmjs.com/package/api-core-backend">
+        <img src="https://img.shields.io/badge/npm-api--core--backend-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="api-core-backend npm package" />
+      </a>
     </td>
-    <td width="33%" valign="top">
-      <h3>khmer-chhankitek-calendar</h3>
-      <p>A Khmer calendar functionality package for working with Khmer date conversion, calendar logic, and date-related utilities.</p>
-      <p>
-        <a href="https://www.npmjs.com/package/khmer-chhankitek-calendar">
-          <img src="https://img.shields.io/badge/npm-package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="khmer-chhankitek-calendar npm package" />
-        </a>
-        <a href="{{GITHUB_URL}}/khmer-chhankitek-calendar">
-          <img src="https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github&logoColor=white" alt="khmer-chhankitek-calendar GitHub repository" />
-        </a>
-      </p>
+    <td width="50%" valign="top">
+      <a href="{{GITHUB_URL}}/khmer-chhankitek-calendar">
+        <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username={{GITHUB_USERNAME}}&repo=khmer-chhankitek-calendar&theme=tokyonight&hide_border=true" alt="khmer-chhankitek-calendar repository card" />
+      </a>
+      <br />
+      <sub>Khmer calendar package for date conversion, calendar logic, and reusable date utilities.</sub>
+      <br /><br />
+      <a href="https://www.npmjs.com/package/khmer-chhankitek-calendar">
+        <img src="https://img.shields.io/badge/npm-khmer--chhankitek--calendar-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="khmer-chhankitek-calendar npm package" />
+      </a>
     </td>
-    <td width="33%" valign="top">
-      <h3>init-backend-project</h3>
-      <p>A CLI tool for generating clean, practical backend project structures so developers can start new API projects faster.</p>
-      <p>
-        <a href="https://www.npmjs.com/package/init-backend-project">
-          <img src="https://img.shields.io/badge/npm-package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="init-backend-project npm package" />
-        </a>
-        <a href="{{GITHUB_URL}}/init-backend-project">
-          <img src="https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github&logoColor=white" alt="init-backend-project GitHub repository" />
-        </a>
-      </p>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="{{GITHUB_URL}}/init-backend-project">
+        <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username={{GITHUB_USERNAME}}&repo=init-backend-project&theme=tokyonight&hide_border=true" alt="init-backend-project repository card" />
+      </a>
+      <br />
+      <sub>CLI scaffolding tool for generating clean and practical backend project structures.</sub>
+      <br /><br />
+      <a href="https://www.npmjs.com/package/init-backend-project">
+        <img src="https://img.shields.io/badge/npm-init--backend--project-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="init-backend-project npm package" />
+      </a>
+    </td>
+    <td width="50%" valign="top">
+      <img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&height=120&color=0:0f172a,55:1e3a8a,100:7c3aed&text=More%20Backend%20Tools&fontColor=ffffff&fontSize=26&desc=APIs%20%7C%20CLI%20%7C%20npm%20Packages%20%7C%20Open%20Source&descAlignY=70" alt="More backend tools" />
+      <br />
+      <sub>Explore more backend utilities, package experiments, and open-source developer tools.</sub>
+      <br /><br />
+      <a href="{{GITHUB_URL}}?tab=repositories">
+        <img src="https://img.shields.io/badge/GitHub-all%20projects-181717?style=for-the-badge&logo=github&logoColor=white" alt="View all GitHub projects" />
+      </a>
+      <a href="{{NPM_URL}}">
+        <img src="https://img.shields.io/badge/npm-all%20packages-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="View all npm packages" />
+      </a>
     </td>
   </tr>
 </table>
 
-<p align="center">
-  <a href="{{GITHUB_URL}}?tab=repositories">
-    <img src="https://img.shields.io/badge/View_all_GitHub_projects-181717?style=for-the-badge&logo=github&logoColor=white" alt="View all GitHub projects" />
-  </a>
-  <a href="{{NPM_URL}}">
-    <img src="https://img.shields.io/badge/View_all_npm_packages-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="View all npm packages" />
-  </a>
-</p>
+</div>
 
 ---
 
