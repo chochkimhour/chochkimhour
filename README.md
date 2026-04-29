@@ -10,9 +10,12 @@ Building clean, maintainable, and practical backend systems for real-world appli
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2800&pause=900&color=70A5FD&center=true&vCenter=true&width=760&lines=Backend+Developer;RESTful+API+%26+Bot+Builder;npm+Package+Creator;Open+Source+Developer;Clean+and+Practical+Backend+Systems" alt="Typing SVG" />
 
-![GitHub followers](https://img.shields.io/github/followers/chochkimhour?style=flat-square&logo=github&label=GitHub&color=70A5FD)
-![npm](https://img.shields.io/badge/npm-package%20creator-CB3837?style=flat-square&logo=npm&logoColor=white)
-![Backend](https://img.shields.io/badge/backend-clean%20APIs-10B981?style=flat-square)
+![GitHub](https://img.shields.io/badge/GitHub-chochkimhour-181717?style=flat-square&logo=github&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-10B981?style=flat-square)
+![Open Source](https://img.shields.io/badge/Open%20Source-contributor-8B5CF6?style=flat-square&logo=opensourceinitiative&logoColor=white)
+![npm Packages](https://img.shields.io/badge/npm-package%20creator-CB3837?style=flat-square&logo=npm&logoColor=white)
+![Bot](https://img.shields.io/badge/Bot-builder-0EA5E9?style=flat-square&logo=botpress&logoColor=white)
+![API](https://img.shields.io/badge/API-clean%20REST-2563EB?style=flat-square&logo=fastapi&logoColor=white)
 
 </div>
 
