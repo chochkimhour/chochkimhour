@@ -1,0 +1,15 @@
+{
+  "name": "github-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generated GitHub profile README for Choch Kimhour.",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-readme.mjs",
+    "check": "node scripts/generate-readme.mjs --check",
+    "validate:example": "node scripts/generate-readme.mjs --env .env.example --output README.example.md --dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
