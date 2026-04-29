@@ -34,38 +34,15 @@ My backend experience includes building modules for a School Management System, 
 
 ## Tech Stack
 
-### Languages
+> Focused on backend systems, API design, reusable utilities, and developer tooling.
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=for-the-badge&logo=apachegroovy&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)
-
-### Backend
-
-![Grails](https://img.shields.io/badge/Grails-55AA33?style=for-the-badge&logo=grails&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-
-### API & Backend Concepts
-
-![REST API](https://img.shields.io/badge/RESTful_APIs-2563EB?style=for-the-badge&logo=fastapi&logoColor=white)
-![Middleware](https://img.shields.io/badge/Middleware-6366F1?style=for-the-badge)
-![Validation](https://img.shields.io/badge/Validation-10B981?style=for-the-badge)
-![Authentication](https://img.shields.io/badge/Authentication-F59E0B?style=for-the-badge)
-![Logging](https://img.shields.io/badge/Logging-64748B?style=for-the-badge)
-
-### Database
-
-![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![Database Design](https://img.shields.io/badge/Database_Design-0F172A?style=for-the-badge&logo=databricks&logoColor=white)
-
-### Tools
-
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
-![Docker Basics](https://img.shields.io/badge/Docker_Basics-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+| Area | Technologies |
+| --- | --- |
+| Languages | ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000) |
+| Backend | ![Grails](https://img.shields.io/badge/Grails-55AA33?style=flat-square&logo=grails&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-111827?style=flat-square&logo=express&logoColor=white) |
+| API Work | ![REST APIs](https://img.shields.io/badge/REST_APIs-2563EB?style=flat-square&logo=fastapi&logoColor=white) ![Middleware](https://img.shields.io/badge/Middleware-6366F1?style=flat-square) ![Validation](https://img.shields.io/badge/Validation-10B981?style=flat-square) ![Authentication](https://img.shields.io/badge/Authentication-F59E0B?style=flat-square) ![Logging](https://img.shields.io/badge/Logging-64748B?style=flat-square) |
+| Database | ![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white) ![Database Design](https://img.shields.io/badge/Database_Design-0F172A?style=flat-square&logo=databricks&logoColor=white) |
+| Tools | ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white) ![Docker Basics](https://img.shields.io/badge/Docker_Basics-2496ED?style=flat-square&logo=docker&logoColor=white) |
 
 ---
 
@@ -113,18 +90,18 @@ A CLI tool for generating clean and practical backend project structures.
 
 <div align="center">
 
-<img width="420" src="https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&hide=contribs" alt="{{PROFILE_NAME}} GitHub stats" />
-<img width="420" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=true" alt="{{PROFILE_NAME}} top languages" />
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&hide=contribs&card_width=420" alt="{{PROFILE_NAME}} GitHub stats" />
+<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=true&card_width=420" alt="{{PROFILE_NAME}} top languages" />
 
 <br />
 <br />
 
-<img width="860" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=true" alt="{{PROFILE_NAME}} GitHub streak" />
+<img width="98%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=true" alt="{{PROFILE_NAME}} GitHub streak" />
 
 <br />
 <br />
 
-<img width="860" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub contribution summary" />
+<img width="98%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub contribution summary" />
 
 </div>
 
