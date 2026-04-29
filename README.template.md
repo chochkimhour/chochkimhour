@@ -48,30 +48,55 @@ My backend experience includes building modules for a School Management System, 
 
 ## Featured Projects / npm Packages
 
-### api-core-backend
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h3>api-core-backend</h3>
+      <p>Backend API utilities for REST API responses, pagination, filtering, search, HTTP status handling, and Express middleware helpers.</p>
+      <p>
+        <a href="https://www.npmjs.com/package/api-core-backend">
+          <img src="https://img.shields.io/badge/npm-package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="api-core-backend npm package" />
+        </a>
+        <a href="{{GITHUB_URL}}/api-core-backend">
+          <img src="https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github&logoColor=white" alt="api-core-backend GitHub repository" />
+        </a>
+      </p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>khmer-chhankitek-calendar</h3>
+      <p>A Khmer calendar functionality package for working with Khmer date conversion, calendar logic, and date-related utilities.</p>
+      <p>
+        <a href="https://www.npmjs.com/package/khmer-chhankitek-calendar">
+          <img src="https://img.shields.io/badge/npm-package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="khmer-chhankitek-calendar npm package" />
+        </a>
+        <a href="{{GITHUB_URL}}/khmer-chhankitek-calendar">
+          <img src="https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github&logoColor=white" alt="khmer-chhankitek-calendar GitHub repository" />
+        </a>
+      </p>
+    </td>
+    <td width="33%" valign="top">
+      <h3>init-backend-project</h3>
+      <p>A CLI tool for generating clean, practical backend project structures so developers can start new API projects faster.</p>
+      <p>
+        <a href="https://www.npmjs.com/package/init-backend-project">
+          <img src="https://img.shields.io/badge/npm-package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="init-backend-project npm package" />
+        </a>
+        <a href="{{GITHUB_URL}}/init-backend-project">
+          <img src="https://img.shields.io/badge/GitHub-repository-181717?style=flat-square&logo=github&logoColor=white" alt="init-backend-project GitHub repository" />
+        </a>
+      </p>
+    </td>
+  </tr>
+</table>
 
-Backend API utilities for REST API response handling, pagination, filtering, search, HTTP status, and Express middleware helpers.
-
-[![npm](https://img.shields.io/badge/npm-api--core--backend-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/api-core-backend)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)]({{GITHUB_URL}})
-
----
-
-### khmer-chhankitek-calendar
-
-A Khmer calendar functionality package for working with Khmer date and calendar logic.
-
-[![npm](https://img.shields.io/badge/npm-khmer--chhankitek--calendar-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/khmer-chhankitek-calendar)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)]({{GITHUB_URL}})
-
----
-
-### init-backend-project
-
-A CLI tool for generating clean and practical backend project structures.
-
-[![npm](https://img.shields.io/badge/npm-init--backend--project-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/init-backend-project)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)]({{GITHUB_URL}})
+<p align="center">
+  <a href="{{GITHUB_URL}}?tab=repositories">
+    <img src="https://img.shields.io/badge/View_all_GitHub_projects-181717?style=for-the-badge&logo=github&logoColor=white" alt="View all GitHub projects" />
+  </a>
+  <a href="{{NPM_URL}}">
+    <img src="https://img.shields.io/badge/View_all_npm_packages-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="View all npm packages" />
+  </a>
+</p>
 
 ---
 
