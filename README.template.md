@@ -1,14 +1,20 @@
 <div align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="320" alt="Coding animation" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0f172a,45:1e3a8a,100:7c3aed&text={{PROFILE_NAME_ENCODED}}&fontColor=ffffff&fontSize=42&fontAlignY=35&desc={{PROFILE_TITLE_ENCODED}}&descAlignY=58&animation=fadeIn" alt="{{PROFILE_NAME}} profile banner" />
 
-# Hi, I'm {{PROFILE_NAME}}
+### Clean backend systems, practical APIs, and developer-friendly tools
 
-### {{PROFILE_TITLE}}
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2600&pause=900&color=70A5FD&center=true&vCenter=true&width=720&lines=Backend+Developer+focused+on+clean+architecture;Building+RESTful+APIs+and+backend+utilities;Creating+npm+packages+for+developer+productivity;Writing+maintainable+Java%2C+Groovy%2C+and+TypeScript" alt="Typing SVG" />
 
-{{PROFILE_TAGLINE}}
+<br />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2800&pause=900&color=70A5FD&center=true&vCenter=true&width=700&lines=Backend+Developer;RESTful+API+Builder;npm+Package+Creator;Clean+and+Practical+Backend+Systems" alt="Typing SVG" />
+<sub>Subtle anime-inspired coding vibe with production-minded backend engineering.</sub>
+
+<br /><br />
+
+![GitHub followers](https://img.shields.io/github/followers/{{GITHUB_USERNAME}}?style=flat-square&logo=github&label=GitHub&color=70A5FD)
+![npm](https://img.shields.io/badge/npm-package%20creator-CB3837?style=flat-square&logo=npm&logoColor=white)
+![Backend](https://img.shields.io/badge/backend-clean%20APIs-10B981?style=flat-square)
 
 </div>
 
@@ -109,11 +115,22 @@ A CLI tool for generating clean and practical backend project structures.
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=tokyonight&hide_border=true" alt="{{PROFILE_NAME}} GitHub stats" />
+<table>
+  <tr>
+    <td width="50%">
+      <img src="https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&card_width=420" alt="{{PROFILE_NAME}} GitHub stats" />
+    </td>
+    <td width="50%">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=true&card_width=420" alt="{{PROFILE_NAME}} top languages" />
+    </td>
+  </tr>
+</table>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
+<img src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=true&card_width=860" alt="{{PROFILE_NAME}} GitHub streak" />
 
-<img src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=true" alt="GitHub streak" />
+<br />
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub contribution summary" />
 
 </div>
 

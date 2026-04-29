@@ -70,6 +70,10 @@ if (missingKeys.length > 0) {
   throw new Error(`Missing required env values: ${missingKeys.join(', ')}`);
 }
 
+for (const [key, value] of Object.entries(env)) {
+  env[`${key}_ENCODED`] = encodeURIComponent(value);
+}
+
 const template = readFileSync(templateFile, 'utf8');
 const readme = template.replace(/\{\{([A-Z0-9_]+)\}\}/g, (_, key) => {
   if (!(key in env)) {
