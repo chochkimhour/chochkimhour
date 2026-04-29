@@ -127,3 +127,11 @@ A CLI tool for generating clean and practical backend project structures.
 - Email: `{{EMAIL}}`
 
 ---
+
+## License
+
+This profile README project is licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 {{PROFILE_NAME}}.
+
+---

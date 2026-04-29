@@ -123,7 +123,15 @@ A CLI tool for generating clean and practical backend project structures.
 
 - GitHub: [https://github.com/chochkimhour](https://github.com/chochkimhour)
 - npm: [https://www.npmjs.com/~chochkimhour](https://www.npmjs.com/~chochkimhour)
-- LinkedIn: [https://www.linkedin.com/in/chochkimhour](https://www.linkedin.com/in/chochkimhour)
+- LinkedIn: [https://www.linkedin.com/in/choch-kimhour](https://www.linkedin.com/in/choch-kimhour)
 - Email: `chochkimhour2303@gmail.com`
+
+---
+
+## License
+
+This profile README project is licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Choch Kimhour.
 
 ---
