@@ -1,18 +1,14 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0f172a,45:1e3a8a,100:7c3aed&text=Choch%20Kimhour&fontColor=ffffff&fontSize=42&fontAlignY=35&desc=Backend%20Developer%20%7C%20API%20%26%20Bot%20%7C%20npm%20Package%20%7C%20Open%20Source&descAlignY=58&animation=fadeIn" alt="Choch Kimhour profile banner" />
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="320" alt="Coding animation" />
 
-<img src="./assets/anime-coding-banner.svg" width="860" alt="Anime-inspired coding banner" />
+# Hi, I'm Choch Kimhour
 
-### Clean backend systems, practical APIs, and developer-friendly tools
+### Backend Developer | API & Bot | npm Package | Open Source
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2600&pause=900&color=70A5FD&center=true&vCenter=true&width=720&lines=Backend+Developer+focused+on+clean+architecture;Building+RESTful+APIs+and+backend+utilities;Creating+npm+packages+for+developer+productivity;Writing+maintainable+Java%2C+Groovy%2C+and+TypeScript" alt="Typing SVG" />
+Building clean, maintainable, and practical backend systems for real-world applications.
 
-<br />
-
-<sub>Subtle anime-inspired coding vibe with production-minded backend engineering.</sub>
-
-<br /><br />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2800&pause=900&color=70A5FD&center=true&vCenter=true&width=760&lines=Backend+Developer;RESTful+API+%26+Bot+Builder;npm+Package+Creator;Open+Source+Developer;Clean+and+Practical+Backend+Systems" alt="Typing SVG" />
 
 ![GitHub followers](https://img.shields.io/github/followers/chochkimhour?style=flat-square&logo=github&label=GitHub&color=70A5FD)
 ![npm](https://img.shields.io/badge/npm-package%20creator-CB3837?style=flat-square&logo=npm&logoColor=white)
