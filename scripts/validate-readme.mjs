@@ -38,7 +38,7 @@ const requiredReadmeText = [
   'A CLI scaffolding tool',
   'GitHub Stats',
   'Connect With Me',
-  'height="180"',
+  'assets/coding-banner.gif',
 ];
 
 const requiredTemplateText = [

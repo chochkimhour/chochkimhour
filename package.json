@@ -5,6 +5,7 @@
   "description": "Generated GitHub profile README for Choch Kimhour.",
   "type": "module",
   "scripts": {
+    "generate:banner": "node scripts/generate-banner-gif.mjs",
     "generate": "node scripts/generate-readme.mjs",
     "check": "node scripts/generate-readme.mjs --check",
     "validate": "npm run validate:readme && npm run validate:example",

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="180" alt="Full-width coding animation banner" />
+<img src="assets/coding-banner.gif" width="100%" alt="Clean animated coding banner" />
 
 # Hello, I'm {{PROFILE_NAME}}
 
@@ -30,6 +30,8 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 - I enjoy building developer-friendly tools that help other developers work faster
 - I am continuously improving my backend engineering skills
 - I like practical backend solutions that are simple, reliable, and easy to maintain
+
+---
 
 ## Tech Stack
 
