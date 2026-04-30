@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="320" alt="Coding animation" />
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="Full-width coding animation banner" />
 
 # Hi, I'm {{PROFILE_NAME}}
 
@@ -41,7 +41,7 @@ My backend experience includes building modules for a School Management System, 
 
 | Area | Technologies |
 | --- | --- |
-| Languages | ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000) |
+| Languages | ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
 | Backend | ![Grails](https://img.shields.io/badge/Grails-55AA33?style=flat-square&logo=grails&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-111827?style=flat-square&logo=express&logoColor=white) |
 | API Work | ![REST APIs](https://img.shields.io/badge/REST_APIs-2563EB?style=flat-square&logo=fastapi&logoColor=white) ![Middleware](https://img.shields.io/badge/Middleware-6366F1?style=flat-square) ![Validation](https://img.shields.io/badge/Validation-10B981?style=flat-square) ![Authentication](https://img.shields.io/badge/Authentication-F59E0B?style=flat-square) ![Logging](https://img.shields.io/badge/Logging-64748B?style=flat-square) |
 | Database | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![Database Design](https://img.shields.io/badge/Database_Design-0F172A?style=flat-square&logo=databricks&logoColor=white) |
@@ -62,7 +62,11 @@ My backend experience includes building modules for a School Management System, 
         <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username={{GITHUB_USERNAME}}&repo=api-core-backend&theme=tokyonight&hide_border=true" alt="api-core-backend repository card" />
       </a>
       <br />
-      <sub>REST response helpers, pagination, filtering, search, HTTP status utilities, and Express middleware.</sub>
+      <p align="left">
+        <sub>
+          A backend utility package for building consistent REST APIs faster. It includes response formatting, pagination, filtering, search helpers, HTTP status utilities, and Express middleware patterns that keep API code clean and reusable.
+        </sub>
+      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/api-core-backend">
         <img src="https://img.shields.io/badge/npm-api--core--backend-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="api-core-backend npm package" />
@@ -73,7 +77,11 @@ My backend experience includes building modules for a School Management System, 
         <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username={{GITHUB_USERNAME}}&repo=khmer-chhankitek-calendar&theme=tokyonight&hide_border=true" alt="khmer-chhankitek-calendar repository card" />
       </a>
       <br />
-      <sub>Khmer calendar package for date conversion, calendar logic, and reusable date utilities.</sub>
+      <p align="left">
+        <sub>
+          A Khmer lunar calendar package for converting Gregorian dates into Khmer Chhankitek calendar details. It supports reusable calendar logic, date formatting, holiday-aware workflows, and Khmer date utilities for JavaScript projects.
+        </sub>
+      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/khmer-chhankitek-calendar">
         <img src="https://img.shields.io/badge/npm-khmer--chhankitek--calendar-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="khmer-chhankitek-calendar npm package" />
@@ -86,7 +94,11 @@ My backend experience includes building modules for a School Management System, 
         <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username={{GITHUB_USERNAME}}&repo=init-backend-project&theme=tokyonight&hide_border=true" alt="init-backend-project repository card" />
       </a>
       <br />
-      <sub>CLI scaffolding tool for generating clean and practical backend project structures.</sub>
+      <p align="left">
+        <sub>
+          A CLI tool for quickly starting backend projects with a practical folder structure. It helps generate cleaner project foundations so new APIs, services, and Node.js backends can begin with less repetitive setup.
+        </sub>
+      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/init-backend-project">
         <img src="https://img.shields.io/badge/npm-init--backend--project-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="init-backend-project npm package" />
@@ -95,7 +107,11 @@ My backend experience includes building modules for a School Management System, 
     <td width="50%" valign="top">
       <img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&height=120&color=0:0f172a,55:1e3a8a,100:7c3aed&text=More%20Backend%20Tools&fontColor=ffffff&fontSize=26&desc=APIs%20%7C%20CLI%20%7C%20npm%20Packages%20%7C%20Open%20Source&descAlignY=70" alt="More backend tools" />
       <br />
-      <sub>Explore more backend utilities, package experiments, and open-source developer tools.</sub>
+      <p align="left">
+        <sub>
+          A growing collection of backend utilities, npm package experiments, CLI tools, and open-source projects focused on practical developer workflows, API foundations, and reusable Node.js helpers.
+        </sub>
+      </p>
       <br /><br />
       <a href="{{GITHUB_URL}}?tab=repositories">
         <img src="https://img.shields.io/badge/GitHub-all%20projects-181717?style=for-the-badge&logo=github&logoColor=white" alt="View all GitHub projects" />
