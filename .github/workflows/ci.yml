@@ -24,8 +24,5 @@ jobs:
         with:
           node-version: 20
 
-      - name: Validate README
-        run: npm run validate:readme
-
-      - name: Validate example env
-        run: npm run validate:example
+      - name: Validate project
+        run: npm run validate

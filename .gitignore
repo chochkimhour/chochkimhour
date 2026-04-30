@@ -1,5 +1,9 @@
 .env
+.env.local
 node_modules/
 npm-debug.log*
+README.example.md
+coverage/
+dist/
 .DS_Store
 Thumbs.db

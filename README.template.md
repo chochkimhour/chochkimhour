@@ -2,7 +2,7 @@
 
 <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="180" alt="Full-width coding animation banner" />
 
-# Hi, I'm {{PROFILE_NAME}}
+# Hello, I'm {{PROFILE_NAME}}
 
 ### {{PROFILE_TITLE}}
 
@@ -30,10 +30,6 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 - I enjoy building developer-friendly tools that help other developers work faster
 - I am continuously improving my backend engineering skills
 - I like practical backend solutions that are simple, reliable, and easy to maintain
-
-My backend experience includes building modules for a School Management System, including Dashboard, Survey, Class, Assignment, Quiz, Staff Management, Student Management, and E-learning.
-
----
 
 ## Tech Stack
 
@@ -139,12 +135,12 @@ My backend experience includes building modules for a School Management System, 
 <br />
 <br />
 
-<img width="96%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=false&border=1F2937&background=0D1117&stroke=1F2937&ring=70A5FD&fire=F59E0B&currStreakLabel=70A5FD&sideLabels=C9D1D9&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" alt="{{PROFILE_NAME}} GitHub streak" />
+<img width="96%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=true&border_radius=12&background=0D1117&stroke=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=C9D1D9&currStreakNum=F0F6FC&sideNums=F0F6FC&dates=8B949E" alt="{{PROFILE_NAME}} GitHub streak" />
 
 <br />
 <br />
 
-<img width="96%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{GITHUB_USERNAME}}&theme=github_dark" alt="{{PROFILE_NAME}} GitHub contribution summary" />
+<img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username={{GITHUB_USERNAME}}&custom_title={{PROFILE_NAME_ENCODED}}&theme=tokyo-night&hide_border=false&border_radius=10&bg_color=0D1117&color=C9D1D9&line=70A5FD&point=F59E0B&area=true&area_color=70A5FD" alt="{{PROFILE_NAME}} GitHub activity graph" />
 
 </div>
 

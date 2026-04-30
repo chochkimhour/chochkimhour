@@ -137,12 +137,12 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 <br />
 <br />
 
-<img width="96%" src="https://streak-stats.demolab.com?user=chochkimhour&theme=tokyonight&hide_border=false&border=1F2937&background=0D1117&stroke=1F2937&ring=70A5FD&fire=F59E0B&currStreakLabel=70A5FD&sideLabels=C9D1D9&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" alt="Choch Kimhour GitHub streak" />
+<img width="96%" src="https://streak-stats.demolab.com?user=chochkimhour&theme=tokyonight&hide_border=true&border_radius=12&background=0D1117&stroke=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=C9D1D9&currStreakNum=F0F6FC&sideNums=F0F6FC&dates=8B949E" alt="Choch Kimhour GitHub streak" />
 
 <br />
 <br />
 
-<img width="96%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=chochkimhour&theme=github_dark" alt="Choch Kimhour GitHub contribution summary" />
+<img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=chochkimhour&custom_title=Choch%20Kimhour&theme=tokyo-night&hide_border=false&border_radius=10&bg_color=0D1117&color=C9D1D9&line=70A5FD&point=F59E0B&area=true&area_color=70A5FD" alt="Choch Kimhour GitHub activity graph" />
 
 </div>
 

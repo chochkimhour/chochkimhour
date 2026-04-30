@@ -7,6 +7,7 @@
   "scripts": {
     "generate": "node scripts/generate-readme.mjs",
     "check": "node scripts/generate-readme.mjs --check",
+    "validate": "npm run validate:readme && npm run validate:example",
     "validate:readme": "node scripts/validate-readme.mjs",
     "validate:example": "node scripts/generate-readme.mjs --env .env.example --output README.example.md --dry-run"
   },
