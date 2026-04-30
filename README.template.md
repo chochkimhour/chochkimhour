@@ -135,7 +135,7 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 <br />
 <br />
 
-<img width="96%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=true&border_radius=12&background=0D1117&stroke=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=C9D1D9&currStreakNum=F0F6FC&sideNums=F0F6FC&dates=8B949E" alt="{{PROFILE_NAME}} GitHub streak" />
+<img width="96%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=false&border=30363D&border_radius=14&background=0D1117&stroke=30363D&ring=8B5CF6&fire=F59E0B&currStreakLabel=8B5CF6&sideLabels=C9D1D9&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=9CA3AF" alt="{{PROFILE_NAME}} GitHub streak" />
 
 <br />
 <br />
