@@ -133,18 +133,18 @@ My backend experience includes building modules for a School Management System, 
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&hide=contribs&card_width=420" alt="{{PROFILE_NAME}} GitHub stats" />
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=true&card_width=420" alt="{{PROFILE_NAME}} top languages" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&icon_color=70A5FD&text_color=C9D1D9&rank_icon=github&hide=contribs&card_width=420" alt="{{PROFILE_NAME}} GitHub stats" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&text_color=C9D1D9&card_width=420" alt="{{PROFILE_NAME}} top languages" />
 
 <br />
 <br />
 
-<img width="98%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=true" alt="{{PROFILE_NAME}} GitHub streak" />
+<img width="96%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=false&border=1F2937&background=0D1117&stroke=1F2937&ring=70A5FD&fire=F59E0B&currStreakLabel=70A5FD&sideLabels=C9D1D9&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" alt="{{PROFILE_NAME}} GitHub streak" />
 
 <br />
 <br />
 
-<img width="98%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub contribution summary" />
+<img width="96%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{GITHUB_USERNAME}}&theme=github_dark" alt="{{PROFILE_NAME}} GitHub contribution summary" />
 
 </div>
 

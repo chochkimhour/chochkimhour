@@ -131,18 +131,18 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=chochkimhour&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&hide=contribs&card_width=420" alt="Choch Kimhour GitHub stats" />
-<img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chochkimhour&layout=compact&theme=tokyonight&hide_border=true&card_width=420" alt="Choch Kimhour top languages" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api?username=chochkimhour&show_icons=true&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&icon_color=70A5FD&text_color=C9D1D9&rank_icon=github&hide=contribs&card_width=420" alt="Choch Kimhour GitHub stats" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=chochkimhour&layout=compact&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&text_color=C9D1D9&card_width=420" alt="Choch Kimhour top languages" />
 
 <br />
 <br />
 
-<img width="98%" src="https://streak-stats.demolab.com?user=chochkimhour&theme=tokyonight&hide_border=true" alt="Choch Kimhour GitHub streak" />
+<img width="96%" src="https://streak-stats.demolab.com?user=chochkimhour&theme=tokyonight&hide_border=false&border=1F2937&background=0D1117&stroke=1F2937&ring=70A5FD&fire=F59E0B&currStreakLabel=70A5FD&sideLabels=C9D1D9&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=8B949E" alt="Choch Kimhour GitHub streak" />
 
 <br />
 <br />
 
-<img width="98%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=chochkimhour&theme=tokyonight" alt="Choch Kimhour GitHub contribution summary" />
+<img width="96%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=chochkimhour&theme=github_dark" alt="Choch Kimhour GitHub contribution summary" />
 
 </div>
 
