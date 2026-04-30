@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="Full-width coding animation banner" />
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="320" alt="Full-width coding animation banner" />
 
-# Hi, I'm Choch Kimhour
+# Hello, I'm Choch Kimhour
 
 ### Backend Developer | API & Bot | npm Package | Open Source
 
@@ -30,8 +30,6 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 - I enjoy building developer-friendly tools that help other developers work faster
 - I am continuously improving my backend engineering skills
 - I like practical backend solutions that are simple, reliable, and easy to maintain
-
-My backend experience includes building modules for a School Management System, including Dashboard, Survey, Class, Assignment, Quiz, Staff Management, Student Management, and E-learning.
 
 ---
 
@@ -61,12 +59,6 @@ My backend experience includes building modules for a School Management System, 
       <a href="https://github.com/chochkimhour/api-core-backend">
         <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=chochkimhour&repo=api-core-backend&theme=tokyonight&hide_border=true" alt="api-core-backend repository card" />
       </a>
-      <br />
-      <p align="left">
-        <sub>
-          A backend utility package for building consistent REST APIs faster. It includes response formatting, pagination, filtering, search helpers, HTTP status utilities, and Express middleware patterns that keep API code clean and reusable.
-        </sub>
-      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/api-core-backend">
         <img src="https://img.shields.io/badge/npm-api--core--backend-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="api-core-backend npm package" />
@@ -76,12 +68,6 @@ My backend experience includes building modules for a School Management System, 
       <a href="https://github.com/chochkimhour/khmer-chhankitek-calendar">
         <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=chochkimhour&repo=khmer-chhankitek-calendar&theme=tokyonight&hide_border=true" alt="khmer-chhankitek-calendar repository card" />
       </a>
-      <br />
-      <p align="left">
-        <sub>
-          A Khmer lunar calendar package for converting Gregorian dates into Khmer Chhankitek calendar details. It supports reusable calendar logic, date formatting, holiday-aware workflows, and Khmer date utilities for JavaScript projects.
-        </sub>
-      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/khmer-chhankitek-calendar">
         <img src="https://img.shields.io/badge/npm-khmer--chhankitek--calendar-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="khmer-chhankitek-calendar npm package" />
@@ -93,12 +79,6 @@ My backend experience includes building modules for a School Management System, 
       <a href="https://github.com/chochkimhour/init-backend-project">
         <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=chochkimhour&repo=init-backend-project&theme=tokyonight&hide_border=true" alt="init-backend-project repository card" />
       </a>
-      <br />
-      <p align="left">
-        <sub>
-          A CLI tool for quickly starting backend projects with a practical folder structure. It helps generate cleaner project foundations so new APIs, services, and Node.js backends can begin with less repetitive setup.
-        </sub>
-      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/init-backend-project">
         <img src="https://img.shields.io/badge/npm-init--backend--project-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="init-backend-project npm package" />
@@ -106,12 +86,6 @@ My backend experience includes building modules for a School Management System, 
     </td>
     <td width="50%" valign="top">
       <img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&height=120&color=0:0f172a,55:1e3a8a,100:7c3aed&text=More%20Backend%20Tools&fontColor=ffffff&fontSize=26&desc=APIs%20%7C%20CLI%20%7C%20npm%20Packages%20%7C%20Open%20Source&descAlignY=70" alt="More backend tools" />
-      <br />
-      <p align="left">
-        <sub>
-          A growing collection of backend utilities, npm package experiments, CLI tools, and open-source projects focused on practical developer workflows, API foundations, and reusable Node.js helpers.
-        </sub>
-      </p>
       <br /><br />
       <a href="https://github.com/chochkimhour?tab=repositories">
         <img src="https://img.shields.io/badge/GitHub-all%20projects-181717?style=for-the-badge&logo=github&logoColor=white" alt="View all GitHub projects" />
