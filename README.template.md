@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="200" alt="Full-width coding animation banner" />
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="180" alt="Full-width coding animation banner" />
 
 # Hi, I'm {{PROFILE_NAME}}
 
