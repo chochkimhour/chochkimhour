@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="280" alt="Full-width coding animation banner" />
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="200" alt="Full-width coding animation banner" />
 
 # Hi, I'm {{PROFILE_NAME}}
 
@@ -58,31 +58,27 @@ My backend experience includes building modules for a School Management System, 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3 align="left">
-        <a href="{{GITHUB_URL}}/api-core-backend">api-core-backend</a>
-      </h3>
+      <p align="left"><b><a href="{{GITHUB_URL}}/api-core-backend">api-core-backend</a></b></p>
       <p align="left">
-        <sub>Reusable REST API helpers for consistent responses, pagination, filtering, search, HTTP status handling, and Express middleware.</sub>
+        <sub>A clean backend utility package for building consistent REST APIs with reusable response helpers, pagination, filtering, search, status handling, and Express middleware.</sub>
       </p>
       <p align="left">
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
       </p>
-      <br /><br />
+      <br />
       <a href="https://www.npmjs.com/package/api-core-backend">
         <img src="https://img.shields.io/badge/npm-api--core--backend-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="api-core-backend npm package" />
       </a>
     </td>
     <td width="50%" valign="top">
-      <h3 align="left">
-        <a href="{{GITHUB_URL}}/khmer-chhankitek-calendar">khmer-chhankitek-calendar</a>
-      </h3>
+      <p align="left"><b><a href="{{GITHUB_URL}}/khmer-chhankitek-calendar">khmer-chhankitek-calendar</a></b></p>
       <p align="left">
-        <sub>Khmer Chhankitek calendar utilities for Gregorian date conversion, Khmer lunar date formatting, and holiday-aware JavaScript workflows.</sub>
+        <sub>A Khmer calendar package for converting Gregorian dates, formatting Khmer lunar dates, and supporting holiday-aware JavaScript calendar workflows.</sub>
       </p>
       <p align="left">
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
       </p>
-      <br /><br />
+      <br />
       <a href="https://www.npmjs.com/package/khmer-chhankitek-calendar">
         <img src="https://img.shields.io/badge/npm-khmer--chhankitek--calendar-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="khmer-chhankitek-calendar npm package" />
       </a>
@@ -90,23 +86,24 @@ My backend experience includes building modules for a School Management System, 
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3 align="left">
-        <a href="{{GITHUB_URL}}/init-backend-project">init-backend-project</a>
-      </h3>
+      <p align="left"><b><a href="{{GITHUB_URL}}/init-backend-project">init-backend-project</a></b></p>
       <p align="left">
-        <sub>CLI scaffolding tool for generating clean backend project structures and starting Node.js API projects with less setup.</sub>
+        <sub>A CLI scaffolding tool for starting backend projects faster with practical folders, cleaner defaults, and less repetitive setup for Node.js APIs.</sub>
       </p>
       <p align="left">
         <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
       </p>
-      <br /><br />
+      <br />
       <a href="https://www.npmjs.com/package/init-backend-project">
         <img src="https://img.shields.io/badge/npm-init--backend--project-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="init-backend-project npm package" />
       </a>
     </td>
     <td width="50%" valign="top">
       <img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&height=120&color=0:0f172a,55:1e3a8a,100:7c3aed&text=More%20Backend%20Tools&fontColor=ffffff&fontSize=26&desc=APIs%20%7C%20CLI%20%7C%20npm%20Packages%20%7C%20Open%20Source&descAlignY=70" alt="More backend tools" />
-      <br /><br />
+      <p align="left">
+        <sub>Explore more backend utilities, npm packages, CLI experiments, and open-source tools built around practical API and developer workflows.</sub>
+      </p>
+      <br />
       <a href="{{GITHUB_URL}}?tab=repositories">
         <img src="https://img.shields.io/badge/GitHub-all%20projects-181717?style=for-the-badge&logo=github&logoColor=white" alt="View all GitHub projects" />
       </a>
