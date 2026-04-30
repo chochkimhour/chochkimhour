@@ -11,7 +11,7 @@ if (!existsSync(readmeFile)) {
 
 const readme = readFileSync(readmeFile, 'utf8');
 const requiredText = [
-  "Hi, I'm",
+  "I'm",
   'Backend Developer',
   'Tech Stack',
   'Featured Projects / npm Packages',

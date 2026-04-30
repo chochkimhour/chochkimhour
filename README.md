@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" height="320" alt="Full-width coding animation banner" />
+<img src="assets/anime-coding-banner.svg" width="100%" height="224" alt="Full-width coding animation banner" />
 
 # Hello, I'm Choch Kimhour
 
@@ -56,18 +56,30 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/chochkimhour/api-core-backend">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=chochkimhour&repo=api-core-backend&theme=tokyonight&hide_border=true" alt="api-core-backend repository card" />
-      </a>
+      <h3 align="left">
+        <a href="https://github.com/chochkimhour/api-core-backend">api-core-backend</a>
+      </h3>
+      <p align="left">
+        <sub>Reusable REST API helpers for consistent responses, pagination, filtering, search, HTTP status handling, and Express middleware.</sub>
+      </p>
+      <p align="left">
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/api-core-backend">
         <img src="https://img.shields.io/badge/npm-api--core--backend-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="api-core-backend npm package" />
       </a>
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/chochkimhour/khmer-chhankitek-calendar">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=chochkimhour&repo=khmer-chhankitek-calendar&theme=tokyonight&hide_border=true" alt="khmer-chhankitek-calendar repository card" />
-      </a>
+      <h3 align="left">
+        <a href="https://github.com/chochkimhour/khmer-chhankitek-calendar">khmer-chhankitek-calendar</a>
+      </h3>
+      <p align="left">
+        <sub>Khmer Chhankitek calendar utilities for Gregorian date conversion, Khmer lunar date formatting, and holiday-aware JavaScript workflows.</sub>
+      </p>
+      <p align="left">
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/khmer-chhankitek-calendar">
         <img src="https://img.shields.io/badge/npm-khmer--chhankitek--calendar-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="khmer-chhankitek-calendar npm package" />
@@ -76,9 +88,15 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/chochkimhour/init-backend-project">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=chochkimhour&repo=init-backend-project&theme=tokyonight&hide_border=true" alt="init-backend-project repository card" />
-      </a>
+      <h3 align="left">
+        <a href="https://github.com/chochkimhour/init-backend-project">init-backend-project</a>
+      </h3>
+      <p align="left">
+        <sub>CLI scaffolding tool for generating clean backend project structures and starting Node.js API projects with less setup.</sub>
+      </p>
+      <p align="left">
+        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+      </p>
       <br /><br />
       <a href="https://www.npmjs.com/package/init-backend-project">
         <img src="https://img.shields.io/badge/npm-init--backend--project-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="init-backend-project npm package" />
