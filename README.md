@@ -132,28 +132,9 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 <div align="center">
 
 <p align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=chochkimhour&theme=tokyonight" alt="Choch Kimhour GitHub stats" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=chochkimhour&theme=tokyonight" alt="Choch Kimhour repositories by language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=chochkimhour&theme=github_dark" alt="Choch Kimhour GitHub stats" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=chochkimhour&theme=github_dark" alt="Choch Kimhour top languages" />
 </p>
-
-<p align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=chochkimhour&theme=tokyonight&utcOffset=7" alt="Choch Kimhour productive time" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=chochkimhour&theme=tokyonight" alt="Choch Kimhour most committed languages" />
-</p>
-
-<br />
-
-<img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=chochkimhour&theme=tokyonight" alt="Choch Kimhour GitHub profile details" />
-
-<br />
-<br />
-
-<img width="100%" src="https://streak-stats.demolab.com?user=chochkimhour&theme=tokyonight&hide_border=false&border=30363D&border_radius=14&background=0D1117&stroke=30363D&ring=8B5CF6&fire=F59E0B&currStreakLabel=8B5CF6&sideLabels=C9D1D9&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=9CA3AF" alt="Choch Kimhour GitHub streak" />
-
-<br />
-<br />
-
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=chochkimhour&custom_title=Choch%20Kimhour&theme=tokyo-night&hide_border=false&border_radius=10&bg_color=0D1117&color=C9D1D9&line=70A5FD&point=F59E0B&area=true&area_color=70A5FD" alt="Choch Kimhour GitHub activity graph" />
 
 </div>
 
