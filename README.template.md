@@ -131,18 +131,29 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 
 <div align="center">
 
-<img width="48%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub stats" />
-<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&text_color=C9D1D9&card_width=420" alt="{{PROFILE_NAME}} top languages" />
+<p align="center">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub stats" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} repositories by language" />
+</p>
+
+<p align="center">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username={{GITHUB_USERNAME}}&theme=tokyonight&utcOffset=7" alt="{{PROFILE_NAME}} productive time" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} most committed languages" />
+</p>
+
+<br />
+
+<img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub profile details" />
 
 <br />
 <br />
 
-<img width="96%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=false&border=30363D&border_radius=14&background=0D1117&stroke=30363D&ring=8B5CF6&fire=F59E0B&currStreakLabel=8B5CF6&sideLabels=C9D1D9&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=9CA3AF" alt="{{PROFILE_NAME}} GitHub streak" />
+<img width="100%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=false&border=30363D&border_radius=14&background=0D1117&stroke=30363D&ring=8B5CF6&fire=F59E0B&currStreakLabel=8B5CF6&sideLabels=C9D1D9&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=9CA3AF" alt="{{PROFILE_NAME}} GitHub streak" />
 
 <br />
 <br />
 
-<img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username={{GITHUB_USERNAME}}&custom_title={{PROFILE_NAME_ENCODED}}&theme=tokyo-night&hide_border=false&border_radius=10&bg_color=0D1117&color=C9D1D9&line=70A5FD&point=F59E0B&area=true&area_color=70A5FD" alt="{{PROFILE_NAME}} GitHub activity graph" />
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username={{GITHUB_USERNAME}}&custom_title={{PROFILE_NAME_ENCODED}}&theme=tokyo-night&hide_border=false&border_radius=10&bg_color=0D1117&color=C9D1D9&line=70A5FD&point=F59E0B&area=true&area_color=70A5FD" alt="{{PROFILE_NAME}} GitHub activity graph" />
 
 </div>
 
