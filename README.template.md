@@ -131,8 +131,8 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 
 <div align="center">
 
-<img width="48%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{GITHUB_USERNAME}}&theme=tokyonight" alt="{{PROFILE_NAME}} GitHub stats" />
-<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&text_color=C9D1D9&card_width=420" alt="{{PROFILE_NAME}} top languages" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{GITHUB_USERNAME}}&theme=github_dark" alt="{{PROFILE_NAME}} GitHub stats" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username={{GITHUB_USERNAME}}&theme=github_dark" alt="{{PROFILE_NAME}} top languages" />
 
 <br />
 <br />
