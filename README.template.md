@@ -131,10 +131,18 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 
 <div align="center">
 
-<p align="center">
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{GITHUB_USERNAME}}&theme=github_dark" alt="{{PROFILE_NAME}} GitHub stats" />
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username={{GITHUB_USERNAME}}&theme=github_dark" alt="{{PROFILE_NAME}} top languages" />
-</p>
+<img width="48%" src="https://github-readme-stats.vercel.app/api?username={{GITHUB_USERNAME}}&show_icons=true&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&icon_color=70A5FD&text_color=C9D1D9&rank_icon=github&hide=contribs&card_width=420" alt="{{PROFILE_NAME}} GitHub stats" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username={{GITHUB_USERNAME}}&layout=compact&theme=tokyonight&hide_border=false&border_color=1F2937&border_radius=10&bg_color=0D1117&title_color=70A5FD&text_color=C9D1D9&card_width=420" alt="{{PROFILE_NAME}} top languages" />
+
+<br />
+<br />
+
+<img width="96%" src="https://streak-stats.demolab.com?user={{GITHUB_USERNAME}}&theme=tokyonight&hide_border=false&border=30363D&border_radius=14&background=0D1117&stroke=30363D&ring=8B5CF6&fire=F59E0B&currStreakLabel=8B5CF6&sideLabels=C9D1D9&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=9CA3AF" alt="{{PROFILE_NAME}} GitHub streak" />
+
+<br />
+<br />
+
+<img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username={{GITHUB_USERNAME}}&custom_title={{PROFILE_NAME_ENCODED}}&theme=tokyo-night&hide_border=false&border_radius=10&bg_color=0D1117&color=C9D1D9&line=70A5FD&point=F59E0B&area=true&area_color=70A5FD" alt="{{PROFILE_NAME}} GitHub activity graph" />
 
 </div>
 
