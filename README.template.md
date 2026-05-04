@@ -153,6 +153,7 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 - GitHub: [{{GITHUB_URL}}]({{GITHUB_URL}})
 - npm: [{{NPM_URL}}]({{NPM_URL}})
 - LinkedIn: [{{LINKEDIN_URL}}]({{LINKEDIN_URL}})
+- Portfolio: [{{PORTFOLIO_URL}}]({{PORTFOLIO_URL}})
 - Email: `{{EMAIL}}`
 
 ---

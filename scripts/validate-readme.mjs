@@ -49,6 +49,7 @@ const requiredTemplateText = [
   '{{GITHUB_URL}}',
   '{{NPM_URL}}',
   '{{LINKEDIN_URL}}',
+  '{{PORTFOLIO_URL}}',
   '{{EMAIL}}',
 ];
 
