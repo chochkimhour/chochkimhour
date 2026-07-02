@@ -54,7 +54,6 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 - npm: [https://www.npmjs.com/~chochkimhour](https://www.npmjs.com/~chochkimhour)
 - LinkedIn: [https://www.linkedin.com/in/choch-kimhour](https://www.linkedin.com/in/choch-kimhour)
 - Portfolio: [https://chochkimhour.github.io/my-portfolio](https://chochkimhour.github.io/my-portfolio)
-- Email: `chochkimhour2303@gmail.com`
 
 ---
 
