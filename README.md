@@ -49,16 +49,6 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 
 ---
 
-## What I Am Currently Building / Learning
-
-- Better backend architecture
-- Clean API design
-- TypeScript backend tooling
-- CLI and scaffolding tools
-- Reusable developer utilities
-- Open-source npm packages
-
----
 
 ## Connect With Me
 
