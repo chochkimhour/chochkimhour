@@ -12,7 +12,7 @@
 
 <h2 align="center">Tech Stack</h2>
 
-<table width="100%">
+<table align="center" width="100%" style="width: 100%; min-width: 100%;">
   <tr>
     <th width="24%">Category</th>
     <th width="76%">Technologies</th>
@@ -39,7 +39,7 @@
 
 <h2 align="center">Projects</h2>
 
-<table width="100%">
+<table align="center" width="100%" style="width: 100%; min-width: 100%;">
   <tr>
     <th width="28%">Project</th>
     <th width="52%">Description</th>
@@ -70,7 +70,7 @@
 
 <h2 align="center">Experience</h2>
 
-<table width="100%">
+<table align="center" width="100%" style="width: 100%; min-width: 100%;">
   <tr>
     <th width="34%">Role</th>
     <th width="38%">Company</th>
@@ -97,7 +97,7 @@
 
 <h2 align="center">Connect</h2>
 
-<table width="100%">
+<table align="center" width="100%" style="width: 100%; min-width: 100%;">
   <tr>
     <th width="24%">Platform</th>
     <th width="76%">Link</th>
