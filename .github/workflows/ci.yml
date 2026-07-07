@@ -19,10 +19,38 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Check README exists
+        run: |
+          if [ ! -f README.md ]; then
+            echo "Error: README.md is missing"
+            exit 1
+          fi
 
-      - name: Validate project
-        run: npm run validate
+      - name: Check required README sections
+        run: |
+          README_CONTENT=$(cat README.md)
+          REQUIRED_SECTIONS=("## Tech Stack" "## Projects" "## Experience" "## Services")
+
+          for section in "${REQUIRED_SECTIONS[@]}"; do
+            if [[ "$README_CONTENT" != *"$section"* ]]; then
+              echo "Error: README.md is missing required section: $section"
+              exit 1
+            fi
+          done
+
+          echo "README.md validation passed."
+
+      - name: Check for broken Markdown links
+        run: |
+          # Check for markdown links with empty URLs
+          if grep -n '\[.*\](\s*)' README.md; then
+            echo "Error: Found empty Markdown links"
+            exit 1
+          fi
+
+          # Check for links without protocol
+          if grep -n '\[.*\](www\.' README.md; then
+            echo "Warning: Found links without http/https protocol"
+          fi
+
+          echo "Link validation passed."
