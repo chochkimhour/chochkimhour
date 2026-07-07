@@ -12,7 +12,8 @@
 
 <h2 align="center">Tech Stack</h2>
 
-<div align="center">
+<table width="100%">
+  <tr><td>
 
 | Category | Technologies |
 |----------|--------------|
@@ -21,13 +22,15 @@
 | **Databases** | MySQL · PostgreSQL · Redis |
 | **DevOps** | Git · GitHub · Docker · CI/CD · Cloud Deployment |
 
-</div>
+  </td></tr>
+</table>
 
 ---
 
 <h2 align="center">Projects</h2>
 
-<div align="center">
+<table width="100%">
+  <tr><td>
 
 | Project | Description | Tech |
 |---------|-------------|------|
@@ -35,7 +38,8 @@
 | [khmer-chhankitek-calendar](https://www.npmjs.com/package/khmer-chhankitek-calendar) | npm package for Khmer Chhankitek calendar utilities | JavaScript |
 | [init-backend-project](https://www.npmjs.com/package/init-backend-project) | CLI tool to scaffold new backend projects with cleaner structure | Node.js, CLI |
 
-</div>
+  </td></tr>
+</table>
 
 <p align="center">
   <a href="https://github.com/chochkimhour?tab=repositories">View more on GitHub →</a>
@@ -45,7 +49,8 @@
 
 <h2 align="center">Experience</h2>
 
-<div align="center">
+<table width="100%">
+  <tr><td>
 
 | Role | Company | Period |
 |------|---------|--------|
@@ -53,13 +58,15 @@
 | **Backend Developer Intern** | Ecoinsoft Solutions Co., Ltd | Dec 2024 – Apr 2025 |
 | **Frontend Developer Intern** | Soul Advisor | Feb 2024 – May 2024 |
 
-</div>
+  </td></tr>
+</table>
 
 ---
 
 <h2 align="center">Connect</h2>
 
-<div align="center">
+<table width="100%">
+  <tr><td>
 
 | Platform | Link |
 |----------|------|
@@ -70,7 +77,8 @@
 | **Telegram** | [@choch_kimhour](https://t.me/choch_kimhour) |
 | **Email** | [chochkimhour2303@gmail.com](mailto:chochkimhour2303@gmail.com) |
 
-</div>
+  </td></tr>
+</table>
 
 ---
 
