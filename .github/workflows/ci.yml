@@ -28,11 +28,9 @@ jobs:
 
       - name: Check required README sections
         run: |
-          README_CONTENT=$(cat README.md)
-          REQUIRED_SECTIONS=("## Tech Stack" "## Projects" "## Experience" "## Connect")
-
-          for section in "${REQUIRED_SECTIONS[@]}"; do
-            if [[ "$README_CONTENT" != *"$section"* ]]; then
+          # Check for section titles using both markdown ## and HTML h2 align="center" formats
+          for section in "Tech Stack" "Projects" "Experience" "Connect"; do
+            if ! grep -qE "(## $section|<h2 align=\"center\">$section</h2>)" README.md; then
               echo "Error: README.md is missing required section: $section"
               exit 1
             fi
