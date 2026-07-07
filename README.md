@@ -1,4 +1,4 @@
-# Choch Kimhour
+<h1 align="center">Choch Kimhour</h1>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=3000&pause=800&color=6B7280&center=true&vCenter=true&width=280&lines=Backend+Developer" alt="Typing" />
@@ -86,20 +86,17 @@
     {
       "role": "Backend Developer",
       "company": "Ecoinsoft Solutions Co., Ltd",
-      "period": "2025 – Present",
-      "description": "Developed backend features for SMS and EMS projects, designed RESTful APIs, built database schemas with MySQL and Redis, and deployed services across environments."
+      "period": "2025 – Present"
     },
     {
       "role": "Backend Developer Intern",
       "company": "Ecoinsoft Solutions Co., Ltd",
-      "period": "Dec 2024 – Apr 2025",
-      "description": "Applied Java and OOP principles, developed RESTful APIs using Grails framework, and implemented CRUD operations."
+      "period": "Dec 2024 – Apr 2025"
     },
     {
       "role": "Frontend Developer Intern",
       "company": "Soul Advisor",
-      "period": "Feb 2024 – May 2024",
-      "description": "Built responsive web pages with React.js and Bootstrap, fixed UI issues, and participated in Agile meetings."
+      "period": "Feb 2024 – May 2024"
     }
   ]
 }
