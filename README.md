@@ -1,11 +1,11 @@
-# Choch Kimhour
+<h1 align="center">Choch Kimhour</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&duration=3000&pause=800&color=6B7280&center=true&vCenter=true&width=500&lines=Backend+Developer;API+%26+Bot+Builder;npm+Package+Creator;Open+Source+Contributor" alt="Typing" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=3000&pause=800&color=6B7280&center=true&vCenter=true&width=280&lines=Backend+Developer" alt="Typing" />
 </p>
 
 <p align="center">
-  Backend Developer based in Phnom Penh, Cambodia
+  Based in Phnom Penh, Cambodia
 </p>
 
 ---
