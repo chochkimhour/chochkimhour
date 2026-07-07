@@ -37,15 +37,70 @@ I am a Backend Developer focused on building clean, maintainable, and practical 
 
 > Focused on backend systems, API design, reusable utilities, and developer tooling.
 
-| Area | Technologies |
-| --- | --- |
-| Languages | ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ![Groovy](https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) |
-| Backend | ![Grails](https://img.shields.io/badge/Grails-55AA33?style=flat-square&logo=grails&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-111827?style=flat-square&logo=express&logoColor=white) |
-| API Work | ![REST APIs](https://img.shields.io/badge/REST_APIs-2563EB?style=flat-square&logo=fastapi&logoColor=white) ![Middleware](https://img.shields.io/badge/Middleware-6366F1?style=flat-square) ![Validation](https://img.shields.io/badge/Validation-10B981?style=flat-square) ![Authentication](https://img.shields.io/badge/Authentication-F59E0B?style=flat-square) ![Logging](https://img.shields.io/badge/Logging-64748B?style=flat-square) |
-| Database | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white) ![Database Design](https://img.shields.io/badge/Database_Design-0F172A?style=flat-square&logo=databricks&logoColor=white) |
-| Messaging | ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white) |
-| Server / OS | ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=000) ![Server Basics](https://img.shields.io/badge/Server_Basics-0F172A?style=flat-square&logo=serverfault&logoColor=white) |
-| Tools | ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white) ![Docker Basics](https://img.shields.io/badge/Docker_Basics-2496ED?style=flat-square&logo=docker&logoColor=white) |
+<table width="100%">
+  <tr>
+    <th width="24%">Area</th>
+    <th width="76%">Technologies</th>
+  </tr>
+  <tr>
+    <td>Languages</td>
+    <td>
+      <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
+      <img src="https://img.shields.io/badge/Groovy-4298B8?style=flat-square&logo=apachegroovy&logoColor=white" alt="Groovy" />
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000" alt="JavaScript" />
+      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+    </td>
+  </tr>
+  <tr>
+    <td>Backend</td>
+    <td>
+      <img src="https://img.shields.io/badge/Grails-55AA33?style=flat-square&logo=grails&logoColor=white" alt="Grails" />
+      <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
+      <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
+      <img src="https://img.shields.io/badge/Express.js-111827?style=flat-square&logo=express&logoColor=white" alt="Express.js" />
+    </td>
+  </tr>
+  <tr>
+    <td>API Work</td>
+    <td>
+      <img src="https://img.shields.io/badge/REST_APIs-2563EB?style=flat-square&logo=fastapi&logoColor=white" alt="REST APIs" />
+      <img src="https://img.shields.io/badge/Middleware-6366F1?style=flat-square" alt="Middleware" />
+      <img src="https://img.shields.io/badge/Validation-10B981?style=flat-square" alt="Validation" />
+      <img src="https://img.shields.io/badge/Authentication-F59E0B?style=flat-square" alt="Authentication" />
+      <img src="https://img.shields.io/badge/Logging-64748B?style=flat-square" alt="Logging" />
+    </td>
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>
+      <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
+      <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+      <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis" />
+      <img src="https://img.shields.io/badge/Database_Design-0F172A?style=flat-square&logo=databricks&logoColor=white" alt="Database Design" />
+    </td>
+  </tr>
+  <tr>
+    <td>Messaging</td>
+    <td><img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white" alt="RabbitMQ" /></td>
+  </tr>
+  <tr>
+    <td>Server / OS</td>
+    <td>
+      <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=000" alt="Linux" />
+      <img src="https://img.shields.io/badge/Server_Basics-0F172A?style=flat-square&logo=serverfault&logoColor=white" alt="Server Basics" />
+    </td>
+  </tr>
+  <tr>
+    <td>Tools</td>
+    <td>
+      <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+      <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      <img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm" />
+      <img src="https://img.shields.io/badge/Docker_Basics-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Basics" />
+    </td>
+  </tr>
+</table>
 
 ---
 

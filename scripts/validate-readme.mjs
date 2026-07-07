@@ -26,11 +26,12 @@ const readme = readRequiredFile(readmeFile, 'README.md');
 const template = readRequiredFile(templateFile, 'README.template.md');
 
 const requiredReadmeText = [
-  "Hello, I'm",
+  'Choch Kimhour',
   'Backend Developer',
   'Tech Stack',
-  'Connect With Me',
-  'assets/coding-banner.gif',
+  'Projects',
+  'Experience',
+  'Connect',
 ];
 
 const requiredTemplateText = [
