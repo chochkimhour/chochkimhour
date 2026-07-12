@@ -1,72 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace" width="985" height="560" font-size="15">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace" width="985" height="536" font-size="14">
   <style>
     .key { fill: #cf222e; }
     .value { fill: #0550ae; }
     .cc { fill: #8c959f; }
     .title { fill: #1f2328; font-weight: bold; }
-    .ascii { fill: #656d76; }
-    .accent { fill: #0969da; }
+    .ascii { fill: #24292f; }
     text, tspan { white-space: pre; }
   </style>
-  <rect width="985" height="560" fill="#ffffff" rx="15" stroke="#d0d7de" stroke-width="1"/>
-
-  <!-- Left: terminal / monogram art (ASCII only for consistent width) -->
-  <text x="24" y="40" class="ascii">
-    <tspan x="24" y="40">      +-----------------------+</tspan>
-    <tspan x="24" y="60">      |  &gt;_ choch@kimhour     |</tspan>
-    <tspan x="24" y="80">      +-----------------------+</tspan>
-    <tspan x="24" y="100">      |                       |</tspan>
-    <tspan x="24" y="120" class="accent">      |     #####  ##  ##     |</tspan>
-    <tspan x="24" y="140" class="accent">      |    ##      ## ##      |</tspan>
-    <tspan x="24" y="160" class="accent">      |    ##      ####       |</tspan>
-    <tspan x="24" y="180" class="accent">      |    ##      ## ##      |</tspan>
-    <tspan x="24" y="200" class="accent">      |     #####  ##  ##     |</tspan>
-    <tspan x="24" y="220">      |                       |</tspan>
-    <tspan x="24" y="240">      |   Backend Developer   |</tspan>
-    <tspan x="24" y="260">      |   Phnom Penh, KH      |</tspan>
-    <tspan x="24" y="280">      |                       |</tspan>
-    <tspan x="24" y="300">      |   $ nestjs  spring    |</tspan>
-    <tspan x="24" y="320">      |   $ mysql   redis     |</tspan>
-    <tspan x="24" y="340">      |   $ docker  git       |</tspan>
-    <tspan x="24" y="360">      |                       |</tspan>
-    <tspan x="24" y="380">      |   clean · practical   |</tspan>
-    <tspan x="24" y="400">      |   maintainable APIs   |</tspan>
-    <tspan x="24" y="420">      |                       |</tspan>
-    <tspan x="24" y="440">      +-----------------------+</tspan>
-    <tspan x="24" y="480">        github.com/chochkimhour</tspan>
-    <tspan x="24" y="520">        open source · npm · APIs</tspan>
+  <rect width="985" height="536" fill="#ffffff" rx="15" stroke="#d0d7de" stroke-width="1"/>
+  <text x="18" y="28" class="ascii">
+    <tspan x="18" y="28">           ;   ;;;;;;IIIIIl!!!i&gt;&gt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;</tspan>
+    <tspan x="18" y="46">        : ;;    ;        ;;:llil&lt;&gt;i&gt;i&lt;&lt;~</tspan>
+    <tspan x="18" y="64">              ;!i+~_--??_-~&gt;Ili~~&lt;~+~&lt;&lt;~</tspan>
+    <tspan x="18" y="82">           ;&gt;!              &gt;?-iII;i+&gt;&gt;~</tspan>
+    <tspan x="18" y="100">         :!    uMMMMMMMMM/      [?~i&lt;&gt;-+</tspan>
+    <tspan x="18" y="118">            fMMMMMMMMMMMMMMMMM&amp;   ?~~~&gt;&lt;</tspan>
+    <tspan x="18" y="136">           MMMMMMMMMMMMMMMMMMMMMM  _i&lt;&lt;~</tspan>
+    <tspan x="18" y="154">          MMMMMMMMMMMMMMMMMMMMMMMM :~&lt;&lt;&lt;</tspan>
+    <tspan x="18" y="172">         MMMMMMMMMMMMMMMMMMMMMMMMMM [&gt;&gt;&lt;</tspan>
+    <tspan x="18" y="190">         MMMMMJj&lt; l[&lt;)nbMMMMMMMMMMM {&gt;&lt;~</tspan>
+    <tspan x="18" y="208">         MMMM    !&lt;&lt;         tMMMMM )&gt;&lt;~</tspan>
+    <tspan x="18" y="226">         MMMMj@|}   i_~    ?j| MMM  ?&gt;&lt;~</tspan>
+    <tspan x="18" y="244">          Mp]MMYMMp     ]MMWMMM&gt;MM +;~i~</tspan>
+    <tspan x="18" y="262">        UMM] )M/MM(QX tB\}MMMM_ &amp;M+M ?+~</tspan>
+    <tspan x="18" y="280">          J/  w     M xM    ;~ ]uf X &gt;_+</tspan>
+    <tspan x="18" y="298">        Iowz+      u&gt;  c)     !jQhuf:?++</tspan>
+    <tspan x="18" y="316">         MMM[-     -1 !{t    j{fMz\ ;&lt;!+</tspan>
+    <tspan x="18" y="334">           Mq+)!   &gt;|1nJ    ](_&amp;p  I~-~+</tspan>
+    <tspan x="18" y="352">        I   b-   (MMMY#MMM]_\ tM  _&lt;_~~+</tspan>
+    <tspan x="18" y="370">          l  M&lt;&gt;:    &gt;   I i&gt;_M !&lt;&lt;~_+__</tspan>
+    <tspan x="18" y="388">       &gt;?}}  MxYWX        1vM/M  O]&lt;Ili_</tspan>
+    <tspan x="18" y="406">  l-1t[;      M_ qMMMMMMMMM8~ M   ?xZZj-</tspan>
+    <tspan x="18" y="424">;?I            zv  !-\jt/&lt;   M        l&lt;</tspan>
+    <tspan x="18" y="442">                I/i    ;I;I]X           </tspan>
   </text>
-
-  <!-- Right: neofetch-style info panel -->
-  <text x="390" y="40" fill="#1f2328">
-    <tspan x="390" y="40" class="title">choch@kimhour</tspan><tspan class="cc"> --------------------------------</tspan>
-
-    <tspan x="390" y="68" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">Windows, Linux</tspan>
-    <tspan x="390" y="88" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">on GitHub since Jun 2022</tspan>
-    <tspan x="390" y="108" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Ecoinsoft Solutions Co., Ltd</tspan>
-    <tspan x="390" y="128" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">Backend Developer</tspan>
-    <tspan x="390" y="148" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">VS Code, IntelliJ IDEA</tspan>
-    <tspan x="390" y="168" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">Phnom Penh, Cambodia</tspan>
-
-    <tspan x="390" y="196" class="cc">. </tspan>
-    <tspan x="390" y="216" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">Java, JavaScript, Python, Groovy</tspan>
-    <tspan x="390" y="236" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">HTML, CSS, JSON, YAML</tspan>
-    <tspan x="390" y="256" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Khmer, English</tspan>
-
-    <tspan x="390" y="284" class="cc">. </tspan>
-    <tspan x="390" y="304" class="cc">. </tspan><tspan class="key">Stack</tspan>.<tspan class="key">Backend</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">NestJS, Spring Boot, Grails, Express</tspan>
-    <tspan x="390" y="324" class="cc">. </tspan><tspan class="key">Stack</tspan>.<tspan class="key">Database</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">MySQL, PostgreSQL, Redis</tspan>
-    <tspan x="390" y="344" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">npm packages, CLI tools, open source</tspan>
-
-    <tspan x="390" y="376" class="title">- Contact</tspan><tspan class="cc"> -----------------------------------</tspan>
-    <tspan x="390" y="400" class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">chochkimhour2303@gmail.com</tspan>
-    <tspan x="390" y="420" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">choch-kimhour</tspan>
-    <tspan x="390" y="440" class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">chochkimhour</tspan>
-    <tspan x="390" y="460" class="cc">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">chochkimhour.github.io/my-portfolio</tspan>
-    <tspan x="390" y="480" class="cc">. </tspan><tspan class="key">Telegram</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">@choch_kimhour</tspan>
-    <tspan x="390" y="500" class="cc">. </tspan><tspan class="key">npm</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">~chochkimhour</tspan>
-
-    <tspan x="390" y="532" class="title">- GitHub Stats</tspan><tspan class="cc"> ------------------------------</tspan>
-    <tspan x="390" y="552" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">8</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">4</tspan> | <tspan class="key">Following</tspan>:<tspan class="cc"> ... </tspan><tspan class="value">3</tspan>
+  <text x="400" y="28" fill="#1f2328">
+    <tspan x="400" y="28" class="title">choch@kimhour</tspan><tspan class="cc"> --------------------------------</tspan>
+    <tspan x="400" y="56" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">Windows, Linux</tspan>
+    <tspan x="400" y="76" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">on GitHub since Jun 2022</tspan>
+    <tspan x="400" y="96" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Ecoinsoft Solutions Co., Ltd</tspan>
+    <tspan x="400" y="116" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">Backend Developer</tspan>
+    <tspan x="400" y="136" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">VS Code, IntelliJ IDEA</tspan>
+    <tspan x="400" y="156" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">Phnom Penh, Cambodia</tspan>
+    <tspan x="400" y="186" class="cc">. </tspan><tspan class="key">Languages</tspan><tspan class="key">.</tspan><tspan class="key">Programming</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">Java, JavaScript, Python, Groovy</tspan>
+    <tspan x="400" y="206" class="cc">. </tspan><tspan class="key">Languages</tspan><tspan class="key">.</tspan><tspan class="key">Computer</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">HTML, CSS, JSON, YAML</tspan>
+    <tspan x="400" y="226" class="cc">. </tspan><tspan class="key">Languages</tspan><tspan class="key">.</tspan><tspan class="key">Real</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">Khmer, English</tspan>
+    <tspan x="400" y="256" class="cc">. </tspan><tspan class="key">Stack</tspan><tspan class="key">.</tspan><tspan class="key">Backend</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">NestJS, Spring Boot, Grails, Express</tspan>
+    <tspan x="400" y="276" class="cc">. </tspan><tspan class="key">Stack</tspan><tspan class="key">.</tspan><tspan class="key">Database</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">MySQL, PostgreSQL, Redis</tspan>
+    <tspan x="400" y="296" class="cc">. </tspan><tspan class="key">Hobbies</tspan><tspan class="key">.</tspan><tspan class="key">Software</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">npm packages, CLI tools, open source</tspan>
+    <tspan x="400" y="328" class="title">- Contact</tspan><tspan class="cc"> -----------------------------------</tspan>
+    <tspan x="400" y="352" class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">chochkimhour2303@gmail.com</tspan>
+    <tspan x="400" y="372" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">choch-kimhour</tspan>
+    <tspan x="400" y="392" class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">chochkimhour</tspan>
+    <tspan x="400" y="412" class="cc">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">chochkimhour.github.io/my-portfolio</tspan>
+    <tspan x="400" y="432" class="cc">. </tspan><tspan class="key">Telegram</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">@choch_kimhour</tspan>
+    <tspan x="400" y="452" class="cc">. </tspan><tspan class="key">npm</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">~chochkimhour</tspan>
+    <tspan x="400" y="484" class="title">- GitHub Stats</tspan><tspan class="cc"> ------------------------------</tspan>
+    <tspan x="400" y="508" class="cc">. </tspan><tspan class="value">Repos: 8  |  Followers: 4  |  Following: 3</tspan>
   </text>
 </svg>

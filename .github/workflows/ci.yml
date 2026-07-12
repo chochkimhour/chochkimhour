@@ -19,36 +19,51 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check README exists
+      - name: Check README and SVG assets exist
         run: |
-          if [ ! -f README.md ]; then
-            echo "Error: README.md is missing"
-            exit 1
-          fi
-
-      - name: Check required README sections
-        run: |
-          # Check for section titles using both markdown ## and HTML h2 align="center" formats
-          for section in "Tech Stack" "Projects" "Experience" "Connect"; do
-            if ! grep -qE "(## $section|<h2 align=\"center\">$section</h2>)" README.md; then
-              echo "Error: README.md is missing required section: $section"
+          for f in README.md assets/dark_mode.svg assets/light_mode.svg assets/portrait_ascii.txt; do
+            if [ ! -f "$f" ]; then
+              echo "Error: $f is missing"
               exit 1
             fi
           done
+          echo "Required files present."
 
-          echo "README.md validation passed."
+      - name: Check README is SVG-only profile card
+        run: |
+          if ! grep -q 'assets/dark_mode.svg' README.md; then
+            echo "Error: README.md must reference assets/dark_mode.svg"
+            exit 1
+          fi
+          if ! grep -q 'assets/light_mode.svg' README.md; then
+            echo "Error: README.md must reference assets/light_mode.svg"
+            exit 1
+          fi
+          if grep -qE '##[[:space:]]+(Tech Stack|Projects|Experience|Connect)' README.md; then
+            echo "Error: README.md should not include those markdown sections (content lives in the SVG)."
+            exit 1
+          fi
+          echo "README.md profile card checks passed."
+
+      - name: Check SVG profile content
+        run: |
+          for svg in assets/dark_mode.svg assets/light_mode.svg; do
+            for needle in "choch@kimhour" "Backend Developer" "Ecoinsoft"; do
+              if ! grep -q "$needle" "$svg"; then
+                echo "Error: $svg is missing: $needle"
+                exit 1
+              fi
+            done
+          done
+          echo "SVG content checks passed."
 
       - name: Check for broken Markdown links
         run: |
-          # Check for markdown links with empty URLs
           if grep -n '\[.*\](\s*)' README.md; then
             echo "Error: Found empty Markdown links"
             exit 1
           fi
-
-          # Check for links without protocol
           if grep -n '\[.*\](www\.' README.md; then
             echo "Warning: Found links without http/https protocol"
           fi
-
           echo "Link validation passed."
