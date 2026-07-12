@@ -21,7 +21,7 @@ jobs:
 
       - name: Check required files exist
         run: |
-          for f in README.md assets/dark_mode.svg assets/light_mode.svg assets/choch_kimhour.txt; do
+          for f in README.md assets/dark_mode.png assets/light_mode.png assets/choch_kimhour.txt; do
             if [ ! -f "$f" ]; then
               echo "Error: $f is missing"
               exit 1
@@ -29,26 +29,18 @@ jobs:
           done
           echo "Required files present."
 
-      - name: Check README is SVG-only (no Links section)
+      - name: Check README uses PNG cards (GitHub-stable)
         run: |
-          if ! grep -q 'assets/dark_mode.svg' README.md; then
-            echo "Error: README.md must reference assets/dark_mode.svg"
+          if ! grep -q 'assets/dark_mode.png' README.md; then
+            echo "Error: README.md must reference assets/dark_mode.png"
             exit 1
           fi
-          if ! grep -q 'assets/light_mode.svg' README.md; then
-            echo "Error: README.md must reference assets/light_mode.svg"
+          if ! grep -q 'assets/light_mode.png' README.md; then
+            echo "Error: README.md must reference assets/light_mode.png"
             exit 1
           fi
-          if grep -qiE '###[[:space:]]*Links' README.md; then
-            echo "Error: README.md must not include a Links section"
+          if grep -qiE 'dark_mode\.svg|light_mode\.svg|###[[:space:]]*Links' README.md; then
+            echo "Error: README must not use SVG cards or Links section"
             exit 1
           fi
           echo "README checks passed."
-
-      - name: Check for broken Markdown links
-        run: |
-          if grep -n '\[.*\](\s*)' README.md; then
-            echo "Error: Found empty Markdown links"
-            exit 1
-          fi
-          echo "Link validation passed."

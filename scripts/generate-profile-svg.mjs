@@ -1,9 +1,8 @@
 /**
  * Build dark/light neofetch-style profile SVGs (Andrew6rant layout).
- * Left:  ASCII portrait from assets/choch_kimhour.txt
- * Right: colored key/value terminal panel
  *
- * Left and right columns share the same height so the card looks balanced.
+ * Uses textLength on each ASCII line so GitHub's font substitution cannot
+ * stretch the left column into the right panel.
  *
  * Usage: node scripts/generate-profile-svg.mjs
  */
@@ -29,15 +28,10 @@ const escapeXml = (s) =>
 
 const padRight = (s, width) => (s.length >= width ? s.slice(0, width) : s + ' '.repeat(width - s.length));
 
-/**
- * Nearest-neighbor downsample so dense source art fits Andrew-like proportions.
- * Source is typically ~100x83; target ~46x28 sits evenly next to the info panel.
- */
 const downsampleAscii = (lines, targetCols, targetRows) => {
   const srcRows = lines.length;
   const srcCols = Math.max(...lines.map((l) => l.length), 1);
   const grid = lines.map((l) => padRight(l, srcCols));
-
   const out = [];
   for (let r = 0; r < targetRows; r++) {
     const srcR = Math.min(srcRows - 1, Math.floor(((r + 0.5) * srcRows) / targetRows));
@@ -51,9 +45,8 @@ const downsampleAscii = (lines, targetCols, targetRows) => {
   return out;
 };
 
-// Andrew-like left column size (balanced with right panel line count)
-const TARGET_COLS = 46;
-const TARGET_ROWS = 28;
+const TARGET_COLS = 44;
+const TARGET_ROWS = 26;
 const asciiLines = downsampleAscii(rawAsciiLines, TARGET_COLS, TARGET_ROWS);
 
 const info = {
@@ -81,12 +74,11 @@ const info = {
   stats: 'Repos: 8  |  Followers: 4  |  Following: 3',
 };
 
-const lineWidth = 48;
+const lineWidth = 46;
 
 const dotsFor = (label, value, width = lineWidth) => {
   const base = `${label}: `;
-  const remaining = Math.max(2, width - base.length - value.length);
-  return '.'.repeat(remaining);
+  return '.'.repeat(Math.max(2, width - base.length - value.length));
 };
 
 const themes = {
@@ -110,14 +102,13 @@ const themes = {
   },
 };
 
-/** Build right-panel tspans. y starts at 0; caller shifts by offset. */
-const buildRightPanel = (rightX) => {
-  let y = 0;
+const buildRightPanel = (rightX, startY) => {
+  let y = startY;
   const parts = [];
 
   const pushTitle = (label, dashes) => {
     parts.push(
-      `    <tspan x="${rightX}" y="${y}" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
+      `    <tspan x="${rightX}" y="${y}" fill="currentColor" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
     );
   };
 
@@ -137,14 +128,14 @@ const buildRightPanel = (rightX) => {
 
   for (const row of info.rows) {
     if (row === null) {
-      y += 12;
+      y += 10;
       continue;
     }
     pushRow(row.key, row.value);
     y += 20;
   }
 
-  y += 14;
+  y += 12;
   pushTitle('- Contact', 35);
   y += 24;
 
@@ -153,71 +144,59 @@ const buildRightPanel = (rightX) => {
     y += 20;
   }
 
-  y += 14;
+  y += 12;
   pushTitle('- GitHub Stats', 30);
   y += 24;
   parts.push(
     `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan><tspan class="value">${escapeXml(info.stats)}</tspan>`,
   );
-  // last baseline is at y; content height includes a little descender room
-  const contentHeight = y + 4;
 
-  return { parts, contentHeight };
+  return { parts, endY: y };
 };
 
 const buildSvg = (themeName) => {
   const t = themes[themeName];
 
-  const pad = 22;
+  // Fixed layout numbers — do NOT depend on font metrics
+  const pad = 20;
   const fontSize = 15;
-  const charWidth = fontSize * 0.6;
-
-  const asciiBlockWidth = Math.ceil(TARGET_COLS * charWidth);
+  const lineStep = 18;
+  // Force each ASCII line into this pixel width (GitHub-safe)
+  const asciiLineWidth = 400;
   const leftX = pad;
-  const gap = 32;
-  const rightX = leftX + asciiBlockWidth + gap;
-  const panelWidth = 520;
+  const rightX = leftX + asciiLineWidth + 40;
+  const panelWidth = 500;
   const width = rightX + panelWidth + pad;
 
-  const { parts: rightParts, contentHeight: rightH } = buildRightPanel(rightX);
+  const startY = pad + fontSize;
+  const asciiEndY = startY + (TARGET_ROWS - 1) * lineStep;
+  const { parts: rightParts, endY: rightEndY } = buildRightPanel(rightX, startY);
+  const height = Math.ceil(Math.max(asciiEndY, rightEndY) + pad + 8);
 
-  // Make left ASCII span exactly the same height as the right panel
-  const asciiStep = rightH / Math.max(1, TARGET_ROWS - 1);
-  const contentH = rightH;
-  const height = Math.ceil(pad * 2 + contentH);
-
-  const asciiStartY = pad;
-  const rightOffset = pad;
-
+  // textLength + lengthAdjust forces exact column width even if font changes on GitHub
   const asciiTspans = asciiLines
     .map((line, i) => {
-      const y = asciiStartY + i * asciiStep;
-      return `    <tspan x="${leftX}" y="${y.toFixed(2)}">${escapeXml(line)}</tspan>`;
+      const y = startY + i * lineStep;
+      return `    <tspan x="${leftX}" y="${y}" textLength="${asciiLineWidth}" lengthAdjust="spacingAndGlyphs">${escapeXml(line)}</tspan>`;
     })
     .join('\n');
 
-  const rightPartsShifted = rightParts.map((line) =>
-    line.replace(/y="(\d+(?:\.\d+)?)"/g, (_, y) => `y="${(Number(y) + rightOffset).toFixed(2)}"`),
-  );
-
   const border = t.border != null ? ` stroke="${t.border}" stroke-width="1"` : '';
 
+  // Inline fills (GitHub sometimes weakens class-only CSS)
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace" width="${width}" height="${height}" font-size="${fontSize}px">
-  <style>
-    .key { fill: ${t.key}; }
-    .value { fill: ${t.value}; }
-    .cc { fill: ${t.cc}; }
-    .title { fill: ${t.text}; font-weight: bold; }
-    .ascii { fill: ${t.ascii}; }
-    text, tspan { white-space: pre; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <rect width="${width}" height="${height}" fill="${t.bg}" rx="15"${border}/>
-  <text x="${leftX}" y="${asciiStartY.toFixed(2)}" class="ascii">
+  <text x="${leftX}" y="${startY}" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="${fontSize}" fill="${t.ascii}" xml:space="preserve">
 ${asciiTspans}
   </text>
-  <text x="${rightX}" y="${rightOffset.toFixed(2)}" fill="${t.text}">
-${rightPartsShifted.join('\n')}
+  <text x="${rightX}" y="${startY}" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="${fontSize}" fill="${t.text}" xml:space="preserve">
+${rightParts
+  .join('\n')
+  .replace(/class="key"/g, `fill="${t.key}"`)
+  .replace(/class="value"/g, `fill="${t.value}"`)
+  .replace(/class="cc"/g, `fill="${t.cc}"`)
+  .replace(/class="title"/g, `fill="${t.text}" font-weight="bold"`)}
   </text>
 </svg>
 `;

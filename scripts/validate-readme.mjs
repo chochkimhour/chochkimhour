@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url';
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readmeFile = resolve(rootDir, 'README.md');
 const templateFile = resolve(rootDir, 'README.template.md');
-const darkSvg = resolve(rootDir, 'assets/dark_mode.svg');
-const lightSvg = resolve(rootDir, 'assets/light_mode.svg');
+const darkPng = resolve(rootDir, 'assets/dark_mode.png');
+const lightPng = resolve(rootDir, 'assets/light_mode.png');
 const asciiFile = resolve(rootDir, 'assets/choch_kimhour.txt');
 
 const readRequiredFile = (filePath, label) => {
@@ -27,13 +27,20 @@ const assertIncludes = (content, label, requiredText) => {
 
 const readme = readRequiredFile(readmeFile, 'README.md');
 const template = readRequiredFile(templateFile, 'README.template.md');
-const dark = readRequiredFile(darkSvg, 'assets/dark_mode.svg');
-const light = readRequiredFile(lightSvg, 'assets/light_mode.svg');
 readRequiredFile(asciiFile, 'assets/choch_kimhour.txt');
 
+for (const [path, label] of [
+  [darkPng, 'assets/dark_mode.png'],
+  [lightPng, 'assets/light_mode.png'],
+]) {
+  if (!existsSync(path)) {
+    throw new Error(`${label} is missing. Run: npm run generate:card`);
+  }
+}
+
 const requiredReadmeText = [
-  'assets/dark_mode.svg',
-  'assets/light_mode.svg',
+  'assets/dark_mode.png',
+  'assets/light_mode.png',
   'Choch Kimhour',
   'Backend Developer',
 ];
@@ -44,11 +51,9 @@ const requiredTemplateText = [
   '{{PROFILE_TAGLINE}}',
   '{{GITHUB_USERNAME}}',
   '{{GITHUB_URL}}',
-  'assets/dark_mode.svg',
-  'assets/light_mode.svg',
+  'assets/dark_mode.png',
+  'assets/light_mode.png',
 ];
-
-const requiredSvgText = ['choch@kimhour', 'Backend Developer', 'Phnom Penh', 'LinkedIn'];
 
 if (/\{\{[A-Z0-9_]+\}\}/.test(readme)) {
   throw new Error('README.md contains unreplaced template variables.');
@@ -58,24 +63,12 @@ if (/###\s*Links/i.test(readme)) {
   throw new Error('README.md must not include a Links section.');
 }
 
-assertIncludes(readme, 'README.md', requiredReadmeText);
-assertIncludes(template, 'README.template.md', requiredTemplateText);
-assertIncludes(dark, 'assets/dark_mode.svg', requiredSvgText);
-assertIncludes(light, 'assets/light_mode.svg', requiredSvgText);
-
-// Balanced card: left/right should share one SVG height under ~700px
-for (const [label, svg] of [
-  ['assets/dark_mode.svg', dark],
-  ['assets/light_mode.svg', light],
-]) {
-  const m = svg.match(/height="(\d+)"/);
-  if (!m) {
-    throw new Error(`${label} is missing height attribute.`);
-  }
-  const h = Number(m[1]);
-  if (h > 700) {
-    throw new Error(`${label} height ${h} is too tall (left/right look unbalanced).`);
-  }
+// Prefer PNG on GitHub (SVG font metrics break the layout)
+if (/dark_mode\.svg|light_mode\.svg/i.test(readme)) {
+  throw new Error('README.md should use PNG cards (not SVG) for GitHub-stable layout.');
 }
 
-console.log('README and balanced SVGs are valid.');
+assertIncludes(readme, 'README.md', requiredReadmeText);
+assertIncludes(template, 'README.template.md', requiredTemplateText);
+
+console.log('README and PNG profile cards are valid.');
