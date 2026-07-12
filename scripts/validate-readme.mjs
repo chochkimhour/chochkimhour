@@ -5,9 +5,6 @@ import { fileURLToPath } from 'node:url';
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readmeFile = resolve(rootDir, 'README.md');
 const templateFile = resolve(rootDir, 'README.template.md');
-const darkPng = resolve(rootDir, 'assets/dark_mode.png');
-const lightPng = resolve(rootDir, 'assets/light_mode.png');
-const avatar = resolve(rootDir, 'assets/avatar.png');
 
 const readRequiredFile = (filePath, label) => {
   if (!existsSync(filePath)) {
@@ -28,21 +25,15 @@ const assertIncludes = (content, label, requiredText) => {
 const readme = readRequiredFile(readmeFile, 'README.md');
 const template = readRequiredFile(templateFile, 'README.template.md');
 
-for (const [path, label] of [
-  [darkPng, 'assets/dark_mode.png'],
-  [lightPng, 'assets/light_mode.png'],
-  [avatar, 'assets/avatar.png'],
-]) {
-  if (!existsSync(path)) {
-    throw new Error(`${label} is missing.`);
-  }
-}
-
 const requiredReadmeText = [
-  'assets/dark_mode.png',
-  'assets/light_mode.png',
   'Choch Kimhour',
   'Backend Developer',
+  'linkedin.com/in/choch-kimhour',
+  'https://www.linkedin.com/in/choch-kimhour',
+  'chochkimhour.github.io/my-portfolio',
+  'https://chochkimhour.github.io/my-portfolio',
+  'npmjs.com/~chochkimhour',
+  'https://www.npmjs.com/~chochkimhour',
 ];
 
 const requiredTemplateText = [
@@ -50,22 +41,34 @@ const requiredTemplateText = [
   '{{PROFILE_TITLE}}',
   '{{PROFILE_TAGLINE}}',
   '{{GITHUB_USERNAME}}',
-  '{{GITHUB_URL}}',
-  'assets/dark_mode.png',
-  'assets/light_mode.png',
+  '{{LINKEDIN_URL}}',
+  '{{PORTFOLIO_URL}}',
+  '{{NPM_URL}}',
 ];
 
 if (/\{\{[A-Z0-9_]+\}\}/.test(readme)) {
   throw new Error('README.md contains unreplaced template variables.');
 }
 
-if (/##\s+(Tech Stack|Projects|Experience|Connect)/i.test(readme)) {
-  throw new Error(
-    'README.md should not include Tech Stack / Projects / Experience / Connect sections (data lives in the card image).',
-  );
+// No image-based profile card
+if (/<img\b/i.test(readme) || /dark_mode\.(png|svg)/i.test(readme) || /light_mode\.(png|svg)/i.test(readme)) {
+  throw new Error('README.md must not include profile images (png/svg/img tags).');
+}
+
+// Links must be real markdown links (clickable)
+const requiredLinkPatterns = [
+  /\[linkedin\.com\/in\/choch-kimhour\]\(https:\/\/www\.linkedin\.com\/in\/choch-kimhour\)/,
+  /\[chochkimhour\.github\.io\/my-portfolio\]\(https:\/\/chochkimhour\.github\.io\/my-portfolio\)/,
+  /\[npmjs\.com\/~chochkimhour\]\(https:\/\/www\.npmjs\.com\/~chochkimhour\)/,
+];
+
+for (const pattern of requiredLinkPatterns) {
+  if (!pattern.test(readme)) {
+    throw new Error(`README.md is missing a clickable link matching: ${pattern}`);
+  }
 }
 
 assertIncludes(readme, 'README.md', requiredReadmeText);
 assertIncludes(template, 'README.template.md', requiredTemplateText);
 
-console.log('README structure, card images, and template are valid.');
+console.log('README structure and clickable links are valid.');

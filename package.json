@@ -11,7 +11,7 @@
     "generate:card": "python scripts/generate-profile-card.py",
     "generate:svg": "node scripts/generate-profile-svg.mjs",
     "generate": "node scripts/generate-readme.mjs",
-    "generate:all": "npm run generate:avatar && npm run generate:card && npm run generate:svg && npm run generate",
+    "generate:all": "npm run generate",
     "check": "node scripts/generate-readme.mjs --check",
     "validate": "npm run validate:readme && npm run validate:example",
     "validate:readme": "node scripts/validate-readme.mjs",

@@ -19,31 +19,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check README and card assets exist
+      - name: Check README exists
         run: |
-          for f in README.md assets/dark_mode.png assets/light_mode.png assets/avatar.png; do
-            if [ ! -f "$f" ]; then
-              echo "Error: $f is missing"
+          if [ ! -f README.md ]; then
+            echo "Error: README.md is missing"
+            exit 1
+          fi
+          echo "README.md present."
+
+      - name: Check no profile images in README
+        run: |
+          if grep -qiE '<img|dark_mode\.(png|svg)|light_mode\.(png|svg)|avatar\.png' README.md; then
+            echo "Error: README.md must not include profile images"
+            exit 1
+          fi
+          echo "No profile images in README."
+
+      - name: Check clickable contact links
+        run: |
+          for url in \
+            "https://www.linkedin.com/in/choch-kimhour" \
+            "https://chochkimhour.github.io/my-portfolio" \
+            "https://www.npmjs.com/~chochkimhour"
+          do
+            if ! grep -q "$url" README.md; then
+              echo "Error: README.md missing clickable URL: $url"
               exit 1
             fi
           done
-          echo "Required files present."
-
-      - name: Check README is image-only profile card
-        run: |
-          if ! grep -q 'assets/dark_mode.png' README.md; then
-            echo "Error: README.md must reference assets/dark_mode.png"
-            exit 1
-          fi
-          if ! grep -q 'assets/light_mode.png' README.md; then
-            echo "Error: README.md must reference assets/light_mode.png"
-            exit 1
-          fi
-          if grep -qE '##[[:space:]]+(Tech Stack|Projects|Experience|Connect)' README.md; then
-            echo "Error: README.md should not include those markdown sections."
-            exit 1
-          fi
-          echo "README.md profile card checks passed."
+          echo "Clickable links present."
 
       - name: Check for broken Markdown links
         run: |
