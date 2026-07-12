@@ -1,5 +1,9 @@
 /**
- * Build dark/light neofetch-style profile SVGs with portrait ASCII art.
+ * Build dark/light profile SVGs (Andrew6rant neofetch layout).
+ *
+ * Left:  circular portrait photo (your real face — looks like you)
+ * Right: colored terminal key/value panel
+ *
  * Usage: node scripts/generate-profile-svg.mjs
  */
 
@@ -9,69 +13,53 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const asciiPath = resolve(rootDir, 'assets/portrait_ascii.txt');
+const avatarPath = resolve(rootDir, 'assets/avatar.png');
 const portraitSrc =
   process.env.PORTRAIT_SRC ||
   (existsSync(resolve(rootDir, 'assets/portrait.png'))
     ? resolve(rootDir, 'assets/portrait.png')
     : 'D:\\Images\\chochkimhour.png');
-const pyScript = resolve(rootDir, 'scripts/portrait-to-ascii.py');
 
-// Regenerate ASCII when source portrait is available
-if (existsSync(portraitSrc) && existsSync(pyScript)) {
+// Build compact circular avatar from portrait
+if (existsSync(resolve(rootDir, 'scripts/make-avatar.py'))) {
+  try {
+    execFileSync('python', [resolve(rootDir, 'scripts/make-avatar.py')], {
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+  } catch (err) {
+    console.warn('Avatar generation skipped:', err?.message || err);
+  }
+}
+
+// Also refresh ASCII (optional asset for other uses)
+if (existsSync(resolve(rootDir, 'scripts/portrait-to-ascii.py')) && existsSync(portraitSrc)) {
   try {
     execFileSync(
       'python',
       [
-        pyScript,
+        resolve(rootDir, 'scripts/portrait-to-ascii.py'),
         '--src',
         portraitSrc,
         '--out',
-        asciiPath,
-        '--cols',
-        '40',
-        '--rows',
-        '24',
-        '--contrast',
-        '2.35',
-        '--sharpness',
-        '2.6',
-        '--gamma',
-        '0.68',
+        resolve(rootDir, 'assets/portrait_ascii.txt'),
+        '--width',
+        '44',
       ],
       { stdio: ['ignore', 'pipe', 'pipe'] },
     );
   } catch {
-    // Keep existing ASCII if python conversion fails
+    // optional
   }
 }
 
-if (!existsSync(asciiPath)) {
-  throw new Error(`Missing ASCII portrait: ${asciiPath}`);
-}
-
-const asciiLines = readFileSync(asciiPath, 'utf8')
-  .replace(/\r\n/g, '\n')
-  .split('\n')
-  .filter((line, i, arr) => !(i === arr.length - 1 && line === ''));
-
 const escapeXml = (s) =>
-  s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-
-const padRight = (s, width) => (s.length >= width ? s.slice(0, width) : s + ' '.repeat(width - s.length));
-const colWidth = Math.max(...asciiLines.map((l) => l.length), 40);
-const paddedAscii = asciiLines.map((l) => padRight(l, colWidth));
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const info = {
   user: 'choch@kimhour',
   rows: [
     { key: 'OS', value: 'Windows, Linux' },
     { key: 'Uptime', value: 'on GitHub since Jun 2022' },
-    { key: 'Host', value: 'Ecoinsoft Solutions Co., Ltd' },
     { key: 'Kernel', value: 'Backend Developer' },
     { key: 'IDE', value: 'VS Code, IntelliJ IDEA' },
     { key: 'Location', value: 'Phnom Penh, Cambodia' },
@@ -85,11 +73,8 @@ const info = {
     { key: 'Hobbies.Software', value: 'npm packages, CLI tools, open source' },
   ],
   contact: [
-    { key: 'Email', value: 'chochkimhour2303@gmail.com' },
     { key: 'LinkedIn', value: 'choch-kimhour' },
-    { key: 'GitHub', value: 'chochkimhour' },
     { key: 'Portfolio', value: 'chochkimhour.github.io/my-portfolio' },
-    { key: 'Telegram', value: '@choch_kimhour' },
     { key: 'npm', value: '~chochkimhour' },
   ],
   stats: 'Repos: 8  |  Followers: 4  |  Following: 3',
@@ -110,7 +95,7 @@ const themes = {
     key: '#ffa657',
     value: '#a5d6ff',
     cc: '#616e7f',
-    ascii: '#c9d1d9',
+    ring: '#30363d',
     border: null,
   },
   light: {
@@ -119,41 +104,42 @@ const themes = {
     key: '#cf222e',
     value: '#0550ae',
     cc: '#8c959f',
-    ascii: '#24292f',
+    ring: '#d0d7de',
     border: '#d0d7de',
   },
 };
 
+const portraitHref = (() => {
+  const path = existsSync(avatarPath) ? avatarPath : null;
+  if (!path) return null;
+  const b64 = readFileSync(path).toString('base64');
+  return `data:image/png;base64,${b64}`;
+})();
+
 const buildSvg = (themeName) => {
   const t = themes[themeName];
-  const asciiStartY = 28;
-  const lineStep = 18;
-  const leftX = 18;
-  const rightX = 400;
-  const asciiBlockHeight = paddedAscii.length * lineStep;
-  const height = Math.max(520, asciiStartY + asciiBlockHeight + 20);
+  const width = 1000;
+  const height = 520;
+  const rightX = 390;
+  const fontSize = 15;
 
-  const asciiTspans = paddedAscii
-    .map((line, i) => {
-      const y = asciiStartY + i * lineStep;
-      return `    <tspan x="${leftX}" y="${y}">${escapeXml(line)}</tspan>`;
-    })
-    .join('\n');
+  const cx = 175;
+  const cy = 255;
+  const r = 148;
 
-  let y = 28;
+  let y = 36;
   const rightParts = [];
   rightParts.push(
     `    <tspan x="${rightX}" y="${y}" class="title">${escapeXml(info.user)}</tspan><tspan class="cc"> ${'-'.repeat(32)}</tspan>`,
   );
-  y += 28;
+  y += 30;
 
   for (const row of info.rows) {
     if (row === null) {
-      y += 10;
+      y += 12;
       continue;
     }
     const dots = dotsFor(row.key, row.value);
-    // split compound keys like Languages.Programming into key.key style
     const keyHtml = row.key
       .split('.')
       .map((part) => `<tspan class="key">${escapeXml(part)}</tspan>`)
@@ -164,7 +150,7 @@ const buildSvg = (themeName) => {
     y += 20;
   }
 
-  y += 12;
+  y += 14;
   rightParts.push(
     `    <tspan x="${rightX}" y="${y}" class="title">- Contact</tspan><tspan class="cc"> ${'-'.repeat(35)}</tspan>`,
   );
@@ -178,7 +164,7 @@ const buildSvg = (themeName) => {
     y += 20;
   }
 
-  y += 12;
+  y += 14;
   rightParts.push(
     `    <tspan x="${rightX}" y="${y}" class="title">- GitHub Stats</tspan><tspan class="cc"> ${'-'.repeat(30)}</tspan>`,
   );
@@ -187,27 +173,49 @@ const buildSvg = (themeName) => {
     `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan><tspan class="value">${escapeXml(info.stats)}</tspan>`,
   );
 
-  const finalHeight = Math.max(height, y + 28);
-  const border =
-    t.border != null
-      ? ` stroke="${t.border}" stroke-width="1"`
-      : '';
+  const finalHeight = Math.max(height, y + 36);
+  const border = t.border != null ? ` stroke="${t.border}" stroke-width="1"` : '';
+
+  const imgSize = r * 2;
+  const imgX = cx - r;
+  const imgY = cy - r;
+
+  const photoBlock = portraitHref
+    ? `
+  <defs>
+    <clipPath id="avatarClip">
+      <circle cx="${cx}" cy="${cy}" r="${r}"/>
+    </clipPath>
+  </defs>
+  <circle cx="${cx}" cy="${cy}" r="${r + 5}" fill="none" stroke="${t.ring}" stroke-width="3"/>
+  <image
+    href="${portraitHref}"
+    xlink:href="${portraitHref}"
+    x="${imgX}"
+    y="${imgY}"
+    width="${imgSize}"
+    height="${imgSize}"
+    preserveAspectRatio="xMidYMid slice"
+    clip-path="url(#avatarClip)"
+  />
+`
+    : `
+  <circle cx="${cx}" cy="${cy}" r="${r}" fill="${t.ring}" opacity="0.25"/>
+  <text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="middle" fill="${t.text}" font-size="14">add assets/avatar.png</text>
+`;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace" width="985" height="${finalHeight}" font-size="14">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Consolas, 'Courier New', monospace" width="${width}" height="${finalHeight}" font-size="${fontSize}px">
   <style>
     .key { fill: ${t.key}; }
     .value { fill: ${t.value}; }
     .cc { fill: ${t.cc}; }
     .title { fill: ${t.text}; font-weight: bold; }
-    .ascii { fill: ${t.ascii}; }
     text, tspan { white-space: pre; }
   </style>
-  <rect width="985" height="${finalHeight}" fill="${t.bg}" rx="15"${border}/>
-  <text x="${leftX}" y="${asciiStartY}" class="ascii">
-${asciiTspans}
-  </text>
-  <text x="${rightX}" y="28" fill="${t.text}">
+  <rect width="${width}" height="${finalHeight}" fill="${t.bg}" rx="15"${border}/>
+${photoBlock}
+  <text x="${rightX}" y="36" fill="${t.text}">
 ${rightParts.join('\n')}
   </text>
 </svg>
@@ -217,5 +225,6 @@ ${rightParts.join('\n')}
 for (const name of ['dark', 'light']) {
   const out = resolve(rootDir, `assets/${name}_mode.svg`);
   writeFileSync(out, buildSvg(name), 'utf8');
-  console.log(`Wrote ${out}`);
+  const kb = (readFileSync(out).length / 1024).toFixed(0);
+  console.log(`Wrote ${out} (${kb} KB)`);
 }
