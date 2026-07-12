@@ -1,8 +1,7 @@
 <!--
   GitHub profile README — Andrew6rant-style neofetch SVG
   ASCII source: assets/choch_kimhour.txt
-  Regenerate SVG: npm run generate:svg
-  Regenerate README: npm run generate
+  Regenerate: npm run generate:all
 -->
 
 <a href="{{GITHUB_URL}}">
@@ -11,9 +10,3 @@
     <img alt="{{PROFILE_NAME}} ({{GITHUB_USERNAME}}) — {{PROFILE_TITLE}}. {{PROFILE_TAGLINE}}" src="assets/light_mode.svg" width="100%" />
   </picture>
 </a>
-
-### Links
-
-- **LinkedIn:** [linkedin.com/in/choch-kimhour]({{LINKEDIN_URL}})
-- **Portfolio:** [chochkimhour.github.io/my-portfolio]({{PORTFOLIO_URL}})
-- **npm:** [npmjs.com/~chochkimhour]({{NPM_URL}})

@@ -29,7 +29,7 @@ jobs:
           done
           echo "Required files present."
 
-      - name: Check README uses Andrew-style SVG card
+      - name: Check README is SVG-only (no Links section)
         run: |
           if ! grep -q 'assets/dark_mode.svg' README.md; then
             echo "Error: README.md must reference assets/dark_mode.svg"
@@ -39,21 +39,11 @@ jobs:
             echo "Error: README.md must reference assets/light_mode.svg"
             exit 1
           fi
-          echo "SVG card references OK."
-
-      - name: Check clickable contact links
-        run: |
-          for url in \
-            "https://www.linkedin.com/in/choch-kimhour" \
-            "https://chochkimhour.github.io/my-portfolio" \
-            "https://www.npmjs.com/~chochkimhour"
-          do
-            if ! grep -q "$url" README.md; then
-              echo "Error: README.md missing clickable URL: $url"
-              exit 1
-            fi
-          done
-          echo "Clickable links present."
+          if grep -qiE '###[[:space:]]*Links' README.md; then
+            echo "Error: README.md must not include a Links section"
+            exit 1
+          fi
+          echo "README checks passed."
 
       - name: Check for broken Markdown links
         run: |

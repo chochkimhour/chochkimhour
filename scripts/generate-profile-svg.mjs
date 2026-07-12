@@ -1,7 +1,9 @@
 /**
  * Build dark/light neofetch-style profile SVGs (Andrew6rant layout).
- * Left:  ASCII portrait from assets/choch_kimhour.txt (user-provided)
+ * Left:  ASCII portrait from assets/choch_kimhour.txt
  * Right: colored key/value terminal panel
+ *
+ * Left and right columns share the same height so the card looks balanced.
  *
  * Usage: node scripts/generate-profile-svg.mjs
  */
@@ -17,7 +19,7 @@ if (!existsSync(asciiPath)) {
   throw new Error(`Missing ASCII portrait: ${asciiPath}`);
 }
 
-const asciiLines = readFileSync(asciiPath, 'utf8')
+const rawAsciiLines = readFileSync(asciiPath, 'utf8')
   .replace(/\r\n/g, '\n')
   .split('\n')
   .filter((line, i, arr) => !(i === arr.length - 1 && line === ''));
@@ -26,10 +28,34 @@ const escapeXml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const padRight = (s, width) => (s.length >= width ? s.slice(0, width) : s + ' '.repeat(width - s.length));
-const colWidth = Math.max(...asciiLines.map((l) => l.length), 1);
-const paddedAscii = asciiLines.map((l) => padRight(l, colWidth));
 
-// Host / Email / GitHub username / Telegram omitted (per earlier request)
+/**
+ * Nearest-neighbor downsample so dense source art fits Andrew-like proportions.
+ * Source is typically ~100x83; target ~46x28 sits evenly next to the info panel.
+ */
+const downsampleAscii = (lines, targetCols, targetRows) => {
+  const srcRows = lines.length;
+  const srcCols = Math.max(...lines.map((l) => l.length), 1);
+  const grid = lines.map((l) => padRight(l, srcCols));
+
+  const out = [];
+  for (let r = 0; r < targetRows; r++) {
+    const srcR = Math.min(srcRows - 1, Math.floor(((r + 0.5) * srcRows) / targetRows));
+    let row = '';
+    for (let c = 0; c < targetCols; c++) {
+      const srcC = Math.min(srcCols - 1, Math.floor(((c + 0.5) * srcCols) / targetCols));
+      row += grid[srcR][srcC];
+    }
+    out.push(row);
+  }
+  return out;
+};
+
+// Andrew-like left column size (balanced with right panel line count)
+const TARGET_COLS = 46;
+const TARGET_ROWS = 28;
+const asciiLines = downsampleAscii(rawAsciiLines, TARGET_COLS, TARGET_ROWS);
+
 const info = {
   user: 'choch@kimhour',
   rows: [
@@ -84,33 +110,29 @@ const themes = {
   },
 };
 
-const buildSvg = (themeName) => {
-  const t = themes[themeName];
+/** Build right-panel tspans. y starts at 0; caller shifts by offset. */
+const buildRightPanel = (rightX) => {
+  let y = 0;
+  const parts = [];
 
-  // Dense 100x83 art → compact monospaced grid (same spirit as Andrew6rant)
-  const fontSize = 9;
-  const lineStep = 10;
-  const leftX = 12;
-  const asciiStartY = 18;
-  // ~0.6 * fontSize is typical Consolas advance; keep room for 100 cols
-  const asciiBlockWidth = Math.ceil(colWidth * fontSize * 0.62) + 24;
-  const rightX = asciiBlockWidth + 20;
-  const panelWidth = 560;
-  const width = rightX + panelWidth;
-  const asciiHeight = asciiStartY + paddedAscii.length * lineStep + 16;
+  const pushTitle = (label, dashes) => {
+    parts.push(
+      `    <tspan x="${rightX}" y="${y}" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
+    );
+  };
 
-  const asciiTspans = paddedAscii
-    .map((line, i) => {
-      const y = asciiStartY + i * lineStep;
-      return `    <tspan x="${leftX}" y="${y}">${escapeXml(line)}</tspan>`;
-    })
-    .join('\n');
+  const pushRow = (key, value) => {
+    const dots = dotsFor(key, value);
+    const keyHtml = key
+      .split('.')
+      .map((part) => `<tspan class="key">${escapeXml(part)}</tspan>`)
+      .join('<tspan class="key">.</tspan>');
+    parts.push(
+      `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan>${keyHtml}:<tspan class="cc"> ${dots} </tspan><tspan class="value">${escapeXml(value)}</tspan>`,
+    );
+  };
 
-  let y = 28;
-  const rightParts = [];
-  rightParts.push(
-    `    <tspan x="${rightX}" y="${y}" class="title">${escapeXml(info.user)}</tspan><tspan class="cc"> ${'-'.repeat(34)}</tspan>`,
-  );
+  pushTitle(info.user, 32);
   y += 28;
 
   for (const row of info.rows) {
@@ -118,45 +140,70 @@ const buildSvg = (themeName) => {
       y += 12;
       continue;
     }
-    const dots = dotsFor(row.key, row.value);
-    const keyHtml = row.key
-      .split('.')
-      .map((part) => `<tspan class="key">${escapeXml(part)}</tspan>`)
-      .join('<tspan class="key">.</tspan>');
-    rightParts.push(
-      `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan>${keyHtml}:<tspan class="cc"> ${dots} </tspan><tspan class="value">${escapeXml(row.value)}</tspan>`,
-    );
-    y += 22;
+    pushRow(row.key, row.value);
+    y += 20;
   }
 
   y += 14;
-  rightParts.push(
-    `    <tspan x="${rightX}" y="${y}" class="title">- Contact</tspan><tspan class="cc"> ${'-'.repeat(37)}</tspan>`,
-  );
-  y += 26;
+  pushTitle('- Contact', 35);
+  y += 24;
 
   for (const row of info.contact) {
-    const dots = dotsFor(row.key, row.value);
-    rightParts.push(
-      `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan><tspan class="key">${escapeXml(row.key)}</tspan>:<tspan class="cc"> ${dots} </tspan><tspan class="value">${escapeXml(row.value)}</tspan>`,
-    );
-    y += 22;
+    pushRow(row.key, row.value);
+    y += 20;
   }
 
   y += 14;
-  rightParts.push(
-    `    <tspan x="${rightX}" y="${y}" class="title">- GitHub Stats</tspan><tspan class="cc"> ${'-'.repeat(32)}</tspan>`,
-  );
-  y += 26;
-  rightParts.push(
+  pushTitle('- GitHub Stats', 30);
+  y += 24;
+  parts.push(
     `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan><tspan class="value">${escapeXml(info.stats)}</tspan>`,
   );
+  // last baseline is at y; content height includes a little descender room
+  const contentHeight = y + 4;
 
-  const finalHeight = Math.max(asciiHeight, y + 36);
+  return { parts, contentHeight };
+};
+
+const buildSvg = (themeName) => {
+  const t = themes[themeName];
+
+  const pad = 22;
+  const fontSize = 15;
+  const charWidth = fontSize * 0.6;
+
+  const asciiBlockWidth = Math.ceil(TARGET_COLS * charWidth);
+  const leftX = pad;
+  const gap = 32;
+  const rightX = leftX + asciiBlockWidth + gap;
+  const panelWidth = 520;
+  const width = rightX + panelWidth + pad;
+
+  const { parts: rightParts, contentHeight: rightH } = buildRightPanel(rightX);
+
+  // Make left ASCII span exactly the same height as the right panel
+  const asciiStep = rightH / Math.max(1, TARGET_ROWS - 1);
+  const contentH = rightH;
+  const height = Math.ceil(pad * 2 + contentH);
+
+  const asciiStartY = pad;
+  const rightOffset = pad;
+
+  const asciiTspans = asciiLines
+    .map((line, i) => {
+      const y = asciiStartY + i * asciiStep;
+      return `    <tspan x="${leftX}" y="${y.toFixed(2)}">${escapeXml(line)}</tspan>`;
+    })
+    .join('\n');
+
+  const rightPartsShifted = rightParts.map((line) =>
+    line.replace(/y="(\d+(?:\.\d+)?)"/g, (_, y) => `y="${(Number(y) + rightOffset).toFixed(2)}"`),
+  );
+
   const border = t.border != null ? ` stroke="${t.border}" stroke-width="1"` : '';
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace" width="${width}" height="${finalHeight}" font-size="${fontSize}px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace" width="${width}" height="${height}" font-size="${fontSize}px">
   <style>
     .key { fill: ${t.key}; }
     .value { fill: ${t.value}; }
@@ -165,12 +212,12 @@ const buildSvg = (themeName) => {
     .ascii { fill: ${t.ascii}; }
     text, tspan { white-space: pre; }
   </style>
-  <rect width="${width}" height="${finalHeight}" fill="${t.bg}" rx="15"${border}/>
-  <text x="${leftX}" y="${asciiStartY}" class="ascii">
+  <rect width="${width}" height="${height}" fill="${t.bg}" rx="15"${border}/>
+  <text x="${leftX}" y="${asciiStartY.toFixed(2)}" class="ascii">
 ${asciiTspans}
   </text>
-  <text x="${rightX}" y="28" fill="${t.text}" font-size="14px">
-${rightParts.join('\n')}
+  <text x="${rightX}" y="${rightOffset.toFixed(2)}" fill="${t.text}">
+${rightPartsShifted.join('\n')}
   </text>
 </svg>
 `;
