@@ -19,21 +19,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check README exists
+      - name: Check required files exist
         run: |
-          if [ ! -f README.md ]; then
-            echo "Error: README.md is missing"
-            exit 1
-          fi
-          echo "README.md present."
+          for f in README.md assets/dark_mode.svg assets/light_mode.svg assets/choch_kimhour.txt; do
+            if [ ! -f "$f" ]; then
+              echo "Error: $f is missing"
+              exit 1
+            fi
+          done
+          echo "Required files present."
 
-      - name: Check no profile images in README
+      - name: Check README uses Andrew-style SVG card
         run: |
-          if grep -qiE '<img|dark_mode\.(png|svg)|light_mode\.(png|svg)|avatar\.png' README.md; then
-            echo "Error: README.md must not include profile images"
+          if ! grep -q 'assets/dark_mode.svg' README.md; then
+            echo "Error: README.md must reference assets/dark_mode.svg"
             exit 1
           fi
-          echo "No profile images in README."
+          if ! grep -q 'assets/light_mode.svg' README.md; then
+            echo "Error: README.md must reference assets/light_mode.svg"
+            exit 1
+          fi
+          echo "SVG card references OK."
 
       - name: Check clickable contact links
         run: |
@@ -54,8 +60,5 @@ jobs:
           if grep -n '\[.*\](\s*)' README.md; then
             echo "Error: Found empty Markdown links"
             exit 1
-          fi
-          if grep -n '\[.*\](www\.' README.md; then
-            echo "Warning: Found links without http/https protocol"
           fi
           echo "Link validation passed."
