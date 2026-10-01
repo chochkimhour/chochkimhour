@@ -54,7 +54,7 @@ const info = {
   rows: [
     { key: 'OS', value: 'Windows, Linux' },
     { key: 'Uptime', value: 'on GitHub since Jun 2022' },
-    { key: 'Kernel', value: 'Backend Developer' },
+    { key: 'Kernel', value: 'Software Developer' },
     { key: 'IDE', value: 'VS Code, IntelliJ IDEA' },
     { key: 'Location', value: 'Phnom Penh, Cambodia' },
     null,

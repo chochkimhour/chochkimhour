@@ -50,7 +50,7 @@ THEMES = {
 INFO_ROWS = [
     ("OS", "Windows, Linux"),
     ("Uptime", "on GitHub since Jun 2022"),
-    ("Kernel", "Backend Developer"),
+    ("Kernel", "Software Developer"),
     ("IDE", "VS Code, IntelliJ IDEA"),
     ("Location", "Phnom Penh, Cambodia"),
     None,

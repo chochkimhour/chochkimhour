@@ -42,7 +42,7 @@ const requiredReadmeText = [
   'assets/dark_mode.png',
   'assets/light_mode.png',
   'Choch Kimhour',
-  'Backend Developer',
+  'Software Developer',
 ];
 
 const requiredTemplateText = [
