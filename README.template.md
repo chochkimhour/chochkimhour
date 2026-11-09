@@ -4,9 +4,11 @@
   Regenerate: npm run generate:all
 -->
 
+<p align="center">
 <a href="{{GITHUB_URL}}">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/dark_mode.png" />
-    <img alt="{{PROFILE_NAME}} ({{GITHUB_USERNAME}}) — {{PROFILE_TITLE}}. {{PROFILE_TAGLINE}}" src="assets/light_mode.png" width="520" />
+    <img alt="{{PROFILE_NAME}} ({{GITHUB_USERNAME}}) — {{PROFILE_TITLE}}. {{PROFILE_TAGLINE}}" src="assets/light_mode.png" width="440" />
   </picture>
 </a>
+</p>
