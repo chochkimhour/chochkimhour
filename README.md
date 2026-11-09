@@ -7,6 +7,6 @@
 <a href="https://github.com/chochkimhour">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/dark_mode.png" />
-    <img alt="Choch Kimhour (chochkimhour) — Software Developer. Building clean, maintainable, and practical backend systems for real-world applications." src="assets/light_mode.png" width="100%" />
+    <img alt="Choch Kimhour (chochkimhour) — Software Developer. Building clean, maintainable, and practical backend systems for real-world applications." src="assets/light_mode.png" width="520" />
   </picture>
 </a>
