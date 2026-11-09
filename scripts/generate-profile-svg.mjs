@@ -18,13 +18,10 @@ if (!existsSync(asciiPath)) {
   throw new Error(`Missing ASCII portrait: ${asciiPath}`);
 }
 
-const asciiLightPath = resolve(rootDir, 'assets/choch_kimhour_light.txt');
-
-const readAscii = (path) =>
-  readFileSync(path, 'utf8')
-    .replace(/\r\n/g, '\n')
-    .split('\n')
-    .filter((line, i, arr) => !(i === arr.length - 1 && line === ''));
+const rawAsciiLines = readFileSync(asciiPath, 'utf8')
+  .replace(/\r\n/g, '\n')
+  .split('\n')
+  .filter((line, i, arr) => !(i === arr.length - 1 && line === ''));
 
 const escapeXml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -50,31 +47,30 @@ const downsampleAscii = (lines, targetCols, targetRows) => {
 
 const TARGET_COLS = 44;
 const TARGET_ROWS = 26;
-const asciiByTheme = {
-  dark: downsampleAscii(readAscii(asciiPath), TARGET_COLS, TARGET_ROWS),
-  light: downsampleAscii(readAscii(existsSync(asciiLightPath) ? asciiLightPath : asciiPath), TARGET_COLS, TARGET_ROWS),
-};
+const asciiLines = downsampleAscii(rawAsciiLines, TARGET_COLS, TARGET_ROWS);
 
-const statsPath = resolve(rootDir, 'assets/github-stats.json');
-const stats = existsSync(statsPath) ? JSON.parse(readFileSync(statsPath, 'utf8')) : {};
-const fmt = (n) => (typeof n === 'number' ? n.toLocaleString('en-US') : '?');
+const githubUser = process.env.GITHUB_USERNAME || 'chochkimhour';
+const FALLBACK_STATS = 'Repos: 8  |  Followers: 4  |  Following: 3';
 
-const uptimeSince = (iso) => {
-  if (!iso) return 'on GitHub since Jun 2022';
-  const from = new Date(iso);
-  const now = new Date();
-  let months = (now.getFullYear() - from.getFullYear()) * 12 + now.getMonth() - from.getMonth();
-  if (now.getDate() < from.getDate()) months--;
-  const y = Math.floor(months / 12);
-  const m = months % 12;
-  return `${y} year${y === 1 ? '' : 's'}, ${m} month${m === 1 ? '' : 's'}`;
+const fetchStats = async () => {
+  try {
+    const headers = { 'User-Agent': 'profile-card-generator', Accept: 'application/vnd.github+json' };
+    if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    const res = await fetch(`https://api.github.com/users/${githubUser}`, { headers });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const u = await res.json();
+    return `Repos: ${u.public_repos}  |  Followers: ${u.followers}  |  Following: ${u.following}`;
+  } catch (err) {
+    console.warn(`GitHub stats fetch failed (${err.message}); using fallback.`);
+    return FALLBACK_STATS;
+  }
 };
 
 const info = {
   user: 'choch@kimhour',
   rows: [
     { key: 'OS', value: 'Windows, Linux' },
-    { key: 'Uptime', value: uptimeSince(stats.createdAt) },
+    { key: 'Uptime', value: 'on GitHub since Jun 2022' },
     { key: 'Kernel', value: 'Software Developer' },
     { key: 'IDE', value: 'VS Code, IntelliJ IDEA' },
     { key: 'Location', value: 'Phnom Penh, Cambodia' },
@@ -92,14 +88,10 @@ const info = {
     { key: 'Portfolio', value: 'chochkimhour.github.io/my-portfolio' },
     { key: 'npm', value: '~chochkimhour' },
   ],
-  stats: [
-    `Repos: ${fmt(stats.repos)}  |  Stars: ${fmt(stats.stars)}  |  Followers: ${fmt(stats.followers)}`,
-    `Commits: ${fmt(stats.commits)}  |  Contributions (1y): ${fmt(stats.contributions)}`,
-  ],
+  stats: await fetchStats(),
 };
 
-// Wide enough for the longest row so every value ends in the same column.
-const lineWidth = Math.max(...[...info.rows, ...info.contact].filter(Boolean).map((r) => r.key.length + r.value.length)) + 6;
+const lineWidth = 46;
 
 const dotsFor = (label, value, width = lineWidth) => {
   const base = `${label}: `;
@@ -131,11 +123,9 @@ const buildRightPanel = (rightX, startY) => {
   let y = startY;
   const parts = [];
 
-  const pushTitle = (label) => {
-    // Row text is ". " + lineWidth chars + " "; end the rule in the same column.
-    const dashes = lineWidth + 3 - label.length - 1;
+  const pushTitle = (label, dashes) => {
     parts.push(
-      `    <tspan x="${rightX}" y="${y}" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
+      `    <tspan x="${rightX}" y="${y}" fill="currentColor" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
     );
   };
 
@@ -150,7 +140,7 @@ const buildRightPanel = (rightX, startY) => {
     );
   };
 
-  pushTitle(info.user);
+  pushTitle(info.user, 32);
   y += 28;
 
   for (const row of info.rows) {
@@ -163,7 +153,7 @@ const buildRightPanel = (rightX, startY) => {
   }
 
   y += 12;
-  pushTitle('- Contact');
+  pushTitle('- Contact', 35);
   y += 24;
 
   for (const row of info.contact) {
@@ -172,15 +162,11 @@ const buildRightPanel = (rightX, startY) => {
   }
 
   y += 12;
-  pushTitle('- GitHub Stats');
+  pushTitle('- GitHub Stats', 30);
   y += 24;
-  for (const line of info.stats) {
-    parts.push(
-      `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan><tspan class="value">${escapeXml(line)}</tspan>`,
-    );
-    y += 20;
-  }
-  y -= 20;
+  parts.push(
+    `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan><tspan class="value">${escapeXml(info.stats)}</tspan>`,
+  );
 
   return { parts, endY: y };
 };
@@ -196,7 +182,7 @@ const buildSvg = (themeName) => {
   const asciiLineWidth = 400;
   const leftX = pad;
   const rightX = leftX + asciiLineWidth + 40;
-  const panelWidth = 580;
+  const panelWidth = 500;
   const width = rightX + panelWidth + pad;
 
   const startY = pad + fontSize;
@@ -205,7 +191,7 @@ const buildSvg = (themeName) => {
   const height = Math.ceil(Math.max(asciiEndY, rightEndY) + pad + 8);
 
   // textLength + lengthAdjust forces exact column width even if font changes on GitHub
-  const asciiTspans = asciiByTheme[themeName]
+  const asciiTspans = asciiLines
     .map((line, i) => {
       const y = startY + i * lineStep;
       return `    <tspan x="${leftX}" y="${y}" textLength="${asciiLineWidth}" lengthAdjust="spacingAndGlyphs">${escapeXml(line)}</tspan>`;

@@ -10,17 +10,16 @@ Why PNG (not SVG alone)?
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+import os
+import urllib.request
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 ASCII_SRC = ROOT / "assets" / "choch_kimhour.txt"
-ASCII_SRC_LIGHT = ROOT / "assets" / "choch_kimhour_light.txt"
 OUT_DARK = ROOT / "assets" / "dark_mode.png"
 OUT_LIGHT = ROOT / "assets" / "light_mode.png"
-STATS_SRC = ROOT / "assets" / "github-stats.json"
 
 # Card layout (close to Andrew6rant proportions)
 W, H = 980, 520
@@ -51,36 +50,9 @@ THEMES = {
     },
 }
 
-def load_stats() -> dict:
-    return json.loads(STATS_SRC.read_text(encoding="utf-8")) if STATS_SRC.exists() else {}
-
-
-def fmt(n) -> str:
-    return f"{n:,}" if isinstance(n, int) else "?"
-
-
-def uptime_since(iso: str | None) -> str:
-    if not iso:
-        return "on GitHub since Jun 2022"
-    start = datetime.fromisoformat(iso.replace("Z", "+00:00"))
-    now = datetime.now(timezone.utc)
-    months = (now.year - start.year) * 12 + now.month - start.month - (now.day < start.day)
-    y, m = divmod(months, 12)
-    return f"{y} year{'' if y == 1 else 's'}, {m} month{'' if m == 1 else 's'}"
-
-
-def stats_lines(stats: dict) -> list[str]:
-    return [
-        f"Repos: {fmt(stats.get('repos'))}  |  Stars: {fmt(stats.get('stars'))}  |  Followers: {fmt(stats.get('followers'))}",
-        f"Commits: {fmt(stats.get('commits'))}  |  Contributions (1y): {fmt(stats.get('contributions'))}",
-    ]
-
-
-STATS = load_stats()
-
 INFO_ROWS = [
     ("OS", "Windows, Linux"),
-    ("Uptime", uptime_since(STATS.get("createdAt"))),
+    ("Uptime", "on GitHub since Jun 2022"),
     ("Kernel", "Software Developer"),
     ("IDE", "VS Code, IntelliJ IDEA"),
     ("Location", "Phnom Penh, Cambodia"),
@@ -100,8 +72,23 @@ CONTACT = [
     ("npm", "~chochkimhour"),
 ]
 
-# Wide enough for the longest row so every value ends in the same column.
-LINE_WIDTH = max(len(k) + len(v) for k, v in [r for r in INFO_ROWS if r] + CONTACT) + 6
+GITHUB_USER = os.environ.get("GITHUB_USERNAME") or "chochkimhour"
+FALLBACK_STATS = "Repos: 8  |  Followers: 4  |  Following: 3"
+
+
+def fetch_stats() -> str:
+    headers = {"User-Agent": "profile-card-generator", "Accept": "application/vnd.github+json"}
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    req = urllib.request.Request(f"https://api.github.com/users/{GITHUB_USER}", headers=headers)
+    try:
+        with urllib.request.urlopen(req, timeout=15) as res:
+            u = json.load(res)
+        return f"Repos: {u['public_repos']}  |  Followers: {u['followers']}  |  Following: {u['following']}"
+    except Exception as err:  # network/API failure should not block card generation
+        print(f"GitHub stats fetch failed ({err}); using fallback.")
+        return FALLBACK_STATS
 
 
 def load_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -136,20 +123,19 @@ def downsample(lines: list[str], cols: int, rows: int) -> list[str]:
     return out
 
 
-def dots_for(label: str, value: str, width: int = LINE_WIDTH) -> str:
+def dots_for(label: str, value: str, width: int = 46) -> str:
     base = f"{label}: "
     return "." * max(2, width - len(base) - len(value))
 
 
-def load_ascii(theme_name: str) -> list[str]:
-    src = ASCII_SRC_LIGHT if theme_name == "light" and ASCII_SRC_LIGHT.exists() else ASCII_SRC
-    raw = src.read_text(encoding="utf-8").replace("\r\n", "\n").split("\n")
+def load_ascii() -> list[str]:
+    raw = ASCII_SRC.read_text(encoding="utf-8").replace("\r\n", "\n").split("\n")
     while raw and not raw[-1].strip():
         raw.pop()
     return downsample(raw, ASCII_COLS, ASCII_ROWS)
 
 
-def draw_card(theme_name: str) -> Image.Image:
+def draw_card(theme_name: str, stats: str) -> Image.Image:
     t = THEMES[theme_name]
     img = Image.new("RGB", (W, H), t["bg"])
     draw = ImageDraw.Draw(img)
@@ -164,7 +150,7 @@ def draw_card(theme_name: str) -> Image.Image:
     bbox = draw.textbbox((0, 0), sample, font=font)
     char_w = (bbox[2] - bbox[0]) / 10
 
-    ascii_lines = load_ascii(theme_name)
+    ascii_lines = load_ascii()
     left_x = PAD
     # Right panel starts after ASCII block + gap
     right_x = int(left_x + ASCII_COLS * char_w + 36)
@@ -172,7 +158,7 @@ def draw_card(theme_name: str) -> Image.Image:
     # --- Left: ASCII portrait ---
     # Vertically center ASCII block
     ascii_block_h = (ASCII_ROWS - 1) * LINE_H
-    right_block_h = 28 + 5 * 20 + 12 + 3 * 20 + 12 + 3 * 20 + 14 + 24 + 3 * 20 + 14 + 24 + 20 + 8
+    right_block_h = 28 + 5 * 20 + 12 + 3 * 20 + 12 + 3 * 20 + 14 + 24 + 3 * 20 + 14 + 24 + 8
     content_h = max(ascii_block_h, right_block_h)
     top = (H - content_h) // 2
 
@@ -184,10 +170,8 @@ def draw_card(theme_name: str) -> Image.Image:
     # --- Right: neofetch panel ---
     y = top
 
-    def title(label: str) -> None:
+    def title(label: str, dashes: int = 32) -> None:
         nonlocal y
-        # Row text is ". " + LINE_WIDTH chars + " "; end the rule in the same column.
-        dashes = LINE_WIDTH + 3 - len(label) - 2
         draw.text((right_x, y), label, font=font, fill=t["text"])
         tw = draw.textlength(label, font=font)
         draw.text((right_x + tw + 6, y), " " + ("-" * dashes), font=font_sm, fill=t["cc"])
@@ -206,7 +190,7 @@ def draw_card(theme_name: str) -> Image.Image:
         draw.text((x, y), value, font=font_sm, fill=t["value"])
         y += 20
 
-    title("choch@kimhour")
+    title("choch@kimhour", 32)
 
     for item in INFO_ROWS:
         if item is None:
@@ -215,15 +199,13 @@ def draw_card(theme_name: str) -> Image.Image:
         row(*item)
 
     y += 12
-    title("- Contact")
+    title("- Contact", 35)
     for item in CONTACT:
         row(*item)
 
     y += 12
-    title("- GitHub Stats")
-    for line in stats_lines(STATS):
-        draw.text((right_x, y), f". {line}", font=font_sm, fill=t["value"])
-        y += 20
+    title("- GitHub Stats", 30)
+    draw.text((right_x, y), f". {stats}", font=font_sm, fill=t["value"])
 
 
     return img
@@ -233,8 +215,10 @@ def main() -> None:
     if not ASCII_SRC.exists():
         raise SystemExit(f"Missing {ASCII_SRC}")
 
+    stats = fetch_stats()
+    print(f"GitHub stats: {stats}")
     for name, out in (("dark", OUT_DARK), ("light", OUT_LIGHT)):
-        card = draw_card(name)
+        card = draw_card(name, stats)
         card.save(out, optimize=True)
         print(f"Wrote {out} ({out.stat().st_size} bytes) size={card.size}")
 
