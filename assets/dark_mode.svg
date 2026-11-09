@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="540" height="463" viewBox="0 0 540 463">
-  <rect width="540" height="463" fill="#161b22" rx="15"/>
-  <text x="20" y="35" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">
-    <tspan x="20" y="35" fill="#c9d1d9" font-weight="bold">choch@kimhour</tspan><tspan fill="#616e7f"> --------------------------------</tspan>
-    <tspan x="20" y="63" fill="#616e7f">. </tspan><tspan fill="#ffa657">OS</tspan>:<tspan fill="#616e7f"> ............................ </tspan><tspan fill="#a5d6ff">Windows, Linux</tspan>
-    <tspan x="20" y="83" fill="#616e7f">. </tspan><tspan fill="#ffa657">Uptime</tspan>:<tspan fill="#616e7f"> .............. </tspan><tspan fill="#a5d6ff">on GitHub since Jun 2022</tspan>
-    <tspan x="20" y="103" fill="#616e7f">. </tspan><tspan fill="#ffa657">Kernel</tspan>:<tspan fill="#616e7f"> .................... </tspan><tspan fill="#a5d6ff">Software Developer</tspan>
-    <tspan x="20" y="123" fill="#616e7f">. </tspan><tspan fill="#ffa657">IDE</tspan>:<tspan fill="#616e7f"> ................... </tspan><tspan fill="#a5d6ff">VS Code, IntelliJ IDEA</tspan>
-    <tspan x="20" y="143" fill="#616e7f">. </tspan><tspan fill="#ffa657">Location</tspan>:<tspan fill="#616e7f"> ................ </tspan><tspan fill="#a5d6ff">Phnom Penh, Cambodia</tspan>
-    <tspan x="20" y="173" fill="#616e7f">. </tspan><tspan fill="#ffa657">Languages</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Programming</tspan>:<tspan fill="#616e7f"> .. </tspan><tspan fill="#a5d6ff">Java, JavaScript, Python, Groovy</tspan>
-    <tspan x="20" y="193" fill="#616e7f">. </tspan><tspan fill="#ffa657">Languages</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Computer</tspan>:<tspan fill="#616e7f"> ..... </tspan><tspan fill="#a5d6ff">HTML, CSS, JSON, YAML</tspan>
-    <tspan x="20" y="213" fill="#616e7f">. </tspan><tspan fill="#ffa657">Languages</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Real</tspan>:<tspan fill="#616e7f"> ................ </tspan><tspan fill="#a5d6ff">Khmer, English</tspan>
-    <tspan x="20" y="243" fill="#616e7f">. </tspan><tspan fill="#ffa657">Stack</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Backend</tspan>:<tspan fill="#616e7f"> .. </tspan><tspan fill="#a5d6ff">NestJS, Spring Boot, Grails, Express</tspan>
-    <tspan x="20" y="263" fill="#616e7f">. </tspan><tspan fill="#ffa657">Stack</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Database</tspan>:<tspan fill="#616e7f"> ...... </tspan><tspan fill="#a5d6ff">MySQL, PostgreSQL, Redis</tspan>
-    <tspan x="20" y="283" fill="#616e7f">. </tspan><tspan fill="#ffa657">Hobbies</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Software</tspan>:<tspan fill="#616e7f"> .. </tspan><tspan fill="#a5d6ff">npm packages, CLI tools, open source</tspan>
-    <tspan x="20" y="315" fill="#c9d1d9" font-weight="bold">- Contact</tspan><tspan fill="#616e7f"> -----------------------------------</tspan>
-    <tspan x="20" y="339" fill="#616e7f">. </tspan><tspan fill="#ffa657">LinkedIn</tspan>:<tspan fill="#616e7f"> ....................... </tspan><tspan fill="#a5d6ff">choch-kimhour</tspan>
-    <tspan x="20" y="359" fill="#616e7f">. </tspan><tspan fill="#ffa657">Portfolio</tspan>:<tspan fill="#616e7f"> .. </tspan><tspan fill="#a5d6ff">chochkimhour.github.io/my-portfolio</tspan>
-    <tspan x="20" y="379" fill="#616e7f">. </tspan><tspan fill="#ffa657">npm</tspan>:<tspan fill="#616e7f"> ............................ </tspan><tspan fill="#a5d6ff">~chochkimhour</tspan>
-    <tspan x="20" y="411" fill="#c9d1d9" font-weight="bold">- GitHub Stats</tspan><tspan fill="#616e7f"> ------------------------------</tspan>
-    <tspan x="20" y="435" fill="#616e7f">. </tspan><tspan fill="#a5d6ff">Repos: 9  |  Followers: 3  |  Following: 3</tspan>
+<svg xmlns="http://www.w3.org/2000/svg" width="1155" height="295" viewBox="0 0 1155 295">
+  <rect width="1155" height="295" fill="#161b22" rx="15"/>
+  <text x="24" y="47" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="15" fill="#c9d1d9" xml:space="preserve">
+    <tspan x="24" y="47" fill="#c9d1d9" font-weight="bold">choch@kimhour</tspan><tspan fill="#616e7f"> ---------------------------------------------</tspan>
+    <tspan x="24" y="75" fill="#616e7f">. </tspan><tspan fill="#ffa657">OS</tspan>:<tspan fill="#616e7f"> ....................................... </tspan><tspan fill="#a5d6ff">Windows, Linux</tspan>
+    <tspan x="24" y="95" fill="#616e7f">. </tspan><tspan fill="#ffa657">Uptime</tspan>:<tspan fill="#616e7f"> ......................... </tspan><tspan fill="#a5d6ff">on GitHub since Jun 2022</tspan>
+    <tspan x="24" y="115" fill="#616e7f">. </tspan><tspan fill="#ffa657">Kernel</tspan>:<tspan fill="#616e7f"> ............................... </tspan><tspan fill="#a5d6ff">Software Developer</tspan>
+    <tspan x="24" y="135" fill="#616e7f">. </tspan><tspan fill="#ffa657">IDE</tspan>:<tspan fill="#616e7f"> .............................. </tspan><tspan fill="#a5d6ff">VS Code, IntelliJ IDEA</tspan>
+    <tspan x="24" y="155" fill="#616e7f">. </tspan><tspan fill="#ffa657">Location</tspan>:<tspan fill="#616e7f"> ........................... </tspan><tspan fill="#a5d6ff">Phnom Penh, Cambodia</tspan>
+    <tspan x="24" y="185" fill="#616e7f">. </tspan><tspan fill="#ffa657">Languages</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Programming</tspan>:<tspan fill="#616e7f"> .. </tspan><tspan fill="#a5d6ff">Java, JavaScript, Python, Groovy</tspan>
+    <tspan x="24" y="205" fill="#616e7f">. </tspan><tspan fill="#ffa657">Languages</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Computer</tspan>:<tspan fill="#616e7f"> ................ </tspan><tspan fill="#a5d6ff">HTML, CSS, JSON, YAML</tspan>
+    <tspan x="24" y="225" fill="#616e7f">. </tspan><tspan fill="#ffa657">Languages</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Real</tspan>:<tspan fill="#616e7f"> ........................... </tspan><tspan fill="#a5d6ff">Khmer, English</tspan>
+    <tspan x="600" y="47" fill="#c9d1d9" font-weight="bold">- Stack</tspan><tspan fill="#616e7f"> --------------------------------------------------</tspan>
+    <tspan x="600" y="75" fill="#616e7f">. </tspan><tspan fill="#ffa657">Stack</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Backend</tspan>:<tspan fill="#616e7f"> ..... </tspan><tspan fill="#a5d6ff">NestJS, Spring Boot, Grails, Express</tspan>
+    <tspan x="600" y="95" fill="#616e7f">. </tspan><tspan fill="#ffa657">Stack</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Database</tspan>:<tspan fill="#616e7f"> ................ </tspan><tspan fill="#a5d6ff">MySQL, PostgreSQL, Redis</tspan>
+    <tspan x="600" y="115" fill="#616e7f">. </tspan><tspan fill="#ffa657">Hobbies</tspan><tspan fill="#ffa657">.</tspan><tspan fill="#ffa657">Software</tspan>:<tspan fill="#616e7f"> .. </tspan><tspan fill="#a5d6ff">npm packages, CLI tools, open source</tspan>
+    <tspan x="600" y="147" fill="#c9d1d9" font-weight="bold">- Contact</tspan><tspan fill="#616e7f"> ------------------------------------------------</tspan>
+    <tspan x="600" y="175" fill="#616e7f">. </tspan><tspan fill="#ffa657">LinkedIn</tspan>:<tspan fill="#616e7f"> ................................. </tspan><tspan fill="#a5d6ff">choch-kimhour</tspan>
+    <tspan x="600" y="195" fill="#616e7f">. </tspan><tspan fill="#ffa657">Portfolio</tspan>:<tspan fill="#616e7f"> .......... </tspan><tspan fill="#a5d6ff">chochkimhour.github.io/my-portfolio</tspan>
+    <tspan x="600" y="215" fill="#616e7f">. </tspan><tspan fill="#ffa657">npm</tspan>:<tspan fill="#616e7f"> ...................................... </tspan><tspan fill="#a5d6ff">~chochkimhour</tspan>
   </text>
+  <text x="577.5" y="263" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="15" fill="#a5d6ff" xml:space="preserve">. Repos: 9  |  Followers: 3  |  Following: 3</text>
 </svg>

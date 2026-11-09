@@ -19,10 +19,12 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT_DARK = ROOT / "assets" / "dark_mode.png"
 OUT_LIGHT = ROOT / "assets" / "light_mode.png"
 
-# Card layout: info panel only
-W, H = 520, 480
-PAD = 20
+# Card layout: two columns; width/height are derived from the content
+PAD = 24
+GAP = 36  # space between columns
 FONT_SIZE = 15
+TITLE_H, ROW_H, SPACER_H, SECTION_GAP = 28, 20, 10, 12
+STATS_GAP = 18  # space above the centred stats line
 
 THEMES = {
     "dark": {
@@ -43,6 +45,7 @@ THEMES = {
     },
 }
 
+# Left column (under the user title). None = small spacer.
 INFO_ROWS = [
     ("OS", "Windows, Linux"),
     ("Uptime", "on GitHub since Jun 2022"),
@@ -53,7 +56,10 @@ INFO_ROWS = [
     ("Languages.Programming", "Java, JavaScript, Python, Groovy"),
     ("Languages.Computer", "HTML, CSS, JSON, YAML"),
     ("Languages.Real", "Khmer, English"),
-    None,
+]
+
+# Right column, top section
+STACK_ROWS = [
     ("Stack.Backend", "NestJS, Spring Boot, Grails, Express"),
     ("Stack.Database", "MySQL, PostgreSQL, Redis"),
     ("Hobbies.Software", "npm packages, CLI tools, open source"),
@@ -97,63 +103,83 @@ def load_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     return ImageFont.load_default()
 
 
-def dots_for(label: str, value: str, width: int = 46) -> str:
+def column_width(rows: list[tuple[str, str] | None]) -> int:
+    """Characters between ". " and the row end, wide enough that every value ends in one column."""
+    return max(len(k) + len(v) for k, v in filter(None, rows)) + 4
+
+
+def dots_for(label: str, value: str, width: int) -> str:
     base = f"{label}: "
     return "." * max(2, width - len(base) - len(value))
 
 
+LEFT_W = column_width(INFO_ROWS)
+RIGHT_W = column_width(STACK_ROWS + CONTACT)
+
+
 def draw_card(theme_name: str, stats: str) -> Image.Image:
     t = THEMES[theme_name]
+    font = load_font(FONT_SIZE)
+    char_w = font.getlength("M")
+
+    # Row text is ". " + width + " "
+    left_px = (LEFT_W + 3) * char_w
+    right_px = (RIGHT_W + 3) * char_w
+    left_x = PAD
+    right_x = int(left_x + left_px + GAP)
+    W = int(right_x + right_px + PAD)
+
+    left_h = TITLE_H + sum(SPACER_H if r is None else ROW_H for r in INFO_ROWS)
+    right_h = TITLE_H + len(STACK_ROWS) * ROW_H + SECTION_GAP + TITLE_H + len(CONTACT) * ROW_H
+    columns_h = max(left_h, right_h)
+    # Stats line sits centred under both columns.
+    H = columns_h + STATS_GAP + ROW_H + 2 * PAD + 8
+
     img = Image.new("RGB", (W, H), t["bg"])
     draw = ImageDraw.Draw(img)
-    font = load_font(FONT_SIZE)
-    font_sm = load_font(FONT_SIZE)
 
     if t["border"]:
         draw.rounded_rectangle((1, 1, W - 2, H - 2), radius=14, outline=t["border"], width=1)
 
-    # --- Neofetch panel, vertically centred ---
-    content_h = 28 + 5 * 20 + 10 + 3 * 20 + 10 + 3 * 20 + 12 + 28 + 3 * 20 + 12 + 28 + 18
-    right_x = PAD
-    y = (H - content_h) // 2
-
-    def title(label: str, dashes: int = 32) -> None:
-        nonlocal y
-        draw.text((right_x, y), label, font=font, fill=t["text"])
+    def title(x: int, y: int, label: str, width: int) -> int:
+        draw.text((x, y), label, font=font, fill=t["text"])
         tw = draw.textlength(label, font=font)
-        draw.text((right_x + tw + 6, y), " " + ("-" * dashes), font=font_sm, fill=t["cc"])
-        y += 28
+        # End the rule in the same column as the row values.
+        draw.text((x + tw + 6, y), " " + "-" * (width + 1 - len(label)), font=font, fill=t["cc"])
+        return y + TITLE_H
 
-    def row(key: str, value: str) -> None:
-        nonlocal y
+    def row(x: int, y: int, key: str, value: str, width: int) -> int:
         prefix = ". "
-        draw.text((right_x, y), prefix, font=font_sm, fill=t["cc"])
-        x = right_x + draw.textlength(prefix, font=font_sm)
-        draw.text((x, y), key, font=font_sm, fill=t["key"])
-        x += draw.textlength(key, font=font_sm)
-        mid = f": {dots_for(key, value)} "
-        draw.text((x, y), mid, font=font_sm, fill=t["cc"])
-        x += draw.textlength(mid, font=font_sm)
-        draw.text((x, y), value, font=font_sm, fill=t["value"])
-        y += 20
+        draw.text((x, y), prefix, font=font, fill=t["cc"])
+        x += draw.textlength(prefix, font=font)
+        draw.text((x, y), key, font=font, fill=t["key"])
+        x += draw.textlength(key, font=font)
+        mid = f": {dots_for(key, value, width)} "
+        draw.text((x, y), mid, font=font, fill=t["cc"])
+        x += draw.textlength(mid, font=font)
+        draw.text((x, y), value, font=font, fill=t["value"])
+        return y + ROW_H
 
-    title("choch@kimhour", 32)
+    top = PAD + 8
 
+    # --- Left column ---
+    y = title(left_x, top, "choch@kimhour", LEFT_W)
     for item in INFO_ROWS:
-        if item is None:
-            y += 10
-            continue
-        row(*item)
+        y = y + SPACER_H if item is None else row(left_x, y, *item, LEFT_W)
 
-    y += 12
-    title("- Contact", 35)
+    # --- Right column ---
+    y = title(right_x, top, "- Stack", RIGHT_W)
+    for item in STACK_ROWS:
+        y = row(right_x, y, *item, RIGHT_W)
+
+    y = title(right_x, y + SECTION_GAP, "- Contact", RIGHT_W)
     for item in CONTACT:
-        row(*item)
+        y = row(right_x, y, *item, RIGHT_W)
 
-    y += 12
-    title("- GitHub Stats", 30)
-    draw.text((right_x, y), f". {stats}", font=font_sm, fill=t["value"])
-
+    # --- GitHub stats, centred across the card ---
+    line = f". {stats}"
+    stats_x = (W - draw.textlength(line, font=font)) / 2
+    draw.text((stats_x, top + columns_h + STATS_GAP), line, font=font, fill=t["value"])
 
     return img
 

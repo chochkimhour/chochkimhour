@@ -1,5 +1,5 @@
 /**
- * Build dark/light neofetch-style profile info SVGs.
+ * Build dark/light neofetch-style profile info SVGs (two columns).
  *
  * Usage: node scripts/generate-profile-svg.mjs
  */
@@ -31,6 +31,7 @@ const fetchStats = async () => {
 
 const info = {
   user: 'choch@kimhour',
+  // Left column (under the user title). null = small spacer.
   rows: [
     { key: 'OS', value: 'Windows, Linux' },
     { key: 'Uptime', value: 'on GitHub since Jun 2022' },
@@ -41,7 +42,9 @@ const info = {
     { key: 'Languages.Programming', value: 'Java, JavaScript, Python, Groovy' },
     { key: 'Languages.Computer', value: 'HTML, CSS, JSON, YAML' },
     { key: 'Languages.Real', value: 'Khmer, English' },
-    null,
+  ],
+  // Right column, top section
+  stack: [
     { key: 'Stack.Backend', value: 'NestJS, Spring Boot, Grails, Express' },
     { key: 'Stack.Database', value: 'MySQL, PostgreSQL, Redis' },
     { key: 'Hobbies.Software', value: 'npm packages, CLI tools, open source' },
@@ -54,9 +57,12 @@ const info = {
   stats: await fetchStats(),
 };
 
-const lineWidth = 46;
+// Characters between ". " and the row end, wide enough that every value ends in one column.
+const columnWidth = (rows) => Math.max(...rows.filter(Boolean).map((r) => r.key.length + r.value.length)) + 4;
+const leftWidth = columnWidth(info.rows);
+const rightWidth = columnWidth([...info.stack, ...info.contact]);
 
-const dotsFor = (label, value, width = lineWidth) => {
+const dotsFor = (label, value, width) => {
   const base = `${label}: `;
   return '.'.repeat(Math.max(2, width - base.length - value.length));
 };
@@ -80,71 +86,74 @@ const themes = {
   },
 };
 
-const buildRightPanel = (rightX, startY) => {
+const TITLE_H = 28;
+const ROW_H = 20;
+const SPACER_H = 10;
+const SECTION_GAP = 12;
+const STATS_GAP = 18; // space above the centred stats line
+
+const buildColumn = (x, startY, width, sections) => {
   let y = startY;
   const parts = [];
 
-  const pushTitle = (label, dashes) => {
+  const pushTitle = (label) => {
+    // End the rule in the same column as the row values.
+    const dashes = width + 1 - label.length;
     parts.push(
-      `    <tspan x="${rightX}" y="${y}" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
+      `    <tspan x="${x}" y="${y}" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
     );
   };
 
   const pushRow = (key, value) => {
-    const dots = dotsFor(key, value);
+    const dots = dotsFor(key, value, width);
     const keyHtml = key
       .split('.')
       .map((part) => `<tspan class="key">${escapeXml(part)}</tspan>`)
       .join('<tspan class="key">.</tspan>');
     parts.push(
-      `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan>${keyHtml}:<tspan class="cc"> ${dots} </tspan><tspan class="value">${escapeXml(value)}</tspan>`,
+      `    <tspan x="${x}" y="${y}" class="cc">. </tspan>${keyHtml}:<tspan class="cc"> ${dots} </tspan><tspan class="value">${escapeXml(value)}</tspan>`,
     );
   };
 
-  pushTitle(info.user, 32);
-  y += 28;
-
-  for (const row of info.rows) {
-    if (row === null) {
-      y += 10;
-      continue;
+  sections.forEach(({ title, rows }, i) => {
+    if (i > 0) y += SECTION_GAP;
+    pushTitle(title);
+    y += TITLE_H;
+    for (const row of rows) {
+      if (row === null) {
+        y += SPACER_H;
+        continue;
+      }
+      pushRow(row.key, row.value);
+      y += ROW_H;
     }
-    pushRow(row.key, row.value);
-    y += 20;
-  }
+  });
 
-  y += 12;
-  pushTitle('- Contact', 35);
-  y += 24;
-
-  for (const row of info.contact) {
-    pushRow(row.key, row.value);
-    y += 20;
-  }
-
-  y += 12;
-  pushTitle('- GitHub Stats', 30);
-  y += 24;
-  parts.push(
-    `    <tspan x="${rightX}" y="${y}" class="cc">. </tspan><tspan class="value">${escapeXml(info.stats)}</tspan>`,
-  );
-
-  return { parts, endY: y };
+  return { parts, endY: y - ROW_H };
 };
 
 const buildSvg = (themeName) => {
   const t = themes[themeName];
 
   // Fixed layout numbers — do NOT depend on font metrics
-  const pad = 20;
+  const pad = 24;
+  const gap = 36;
   const fontSize = 15;
-  const rightX = pad;
-  const panelWidth = 500;
-  const width = rightX + panelWidth + pad;
+  const charWidth = fontSize * 0.6; // typical monospace advance
+  // Row text is ". " + width + " "
+  const leftX = pad;
+  const rightX = Math.round(leftX + (leftWidth + 3) * charWidth + gap);
+  const width = Math.round(rightX + (rightWidth + 3) * charWidth + pad);
 
-  const startY = pad + fontSize;
-  const { parts: rightParts, endY: rightEndY } = buildRightPanel(rightX, startY);
-  const height = Math.ceil(rightEndY + pad + 8);
+  const startY = pad + 8 + fontSize;
+  const left = buildColumn(leftX, startY, leftWidth, [{ title: info.user, rows: info.rows }]);
+  const right = buildColumn(rightX, startY, rightWidth, [
+    { title: '- Stack', rows: info.stack },
+    { title: '- Contact', rows: info.contact },
+  ]);
+  // Stats line sits centred under both columns.
+  const statsY = Math.max(left.endY, right.endY) + STATS_GAP + ROW_H;
+  const height = Math.ceil(statsY + pad + 8);
 
   const border = t.border != null ? ` stroke="${t.border}" stroke-width="1"` : '';
 
@@ -152,14 +161,15 @@ const buildSvg = (themeName) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <rect width="${width}" height="${height}" fill="${t.bg}" rx="15"${border}/>
-  <text x="${rightX}" y="${startY}" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="${fontSize}" fill="${t.text}" xml:space="preserve">
-${rightParts
+  <text x="${leftX}" y="${startY}" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="${fontSize}" fill="${t.text}" xml:space="preserve">
+${[...left.parts, ...right.parts]
   .join('\n')
   .replace(/class="key"/g, `fill="${t.key}"`)
   .replace(/class="value"/g, `fill="${t.value}"`)
   .replace(/class="cc"/g, `fill="${t.cc}"`)
   .replace(/class="title"/g, `fill="${t.text}" font-weight="bold"`)}
   </text>
+  <text x="${width / 2}" y="${statsY}" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="${fontSize}" fill="${t.value}" xml:space="preserve">. ${escapeXml(info.stats)}</text>
 </svg>
 `;
 };
