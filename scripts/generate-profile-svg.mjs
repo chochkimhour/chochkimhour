@@ -1,53 +1,16 @@
 /**
- * Build dark/light neofetch-style profile SVGs (Andrew6rant layout).
- *
- * Uses textLength on each ASCII line so GitHub's font substitution cannot
- * stretch the left column into the right panel.
+ * Build dark/light neofetch-style profile info SVGs.
  *
  * Usage: node scripts/generate-profile-svg.mjs
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const asciiPath = resolve(rootDir, 'assets/choch_kimhour.txt');
-
-if (!existsSync(asciiPath)) {
-  throw new Error(`Missing ASCII portrait: ${asciiPath}`);
-}
-
-const rawAsciiLines = readFileSync(asciiPath, 'utf8')
-  .replace(/\r\n/g, '\n')
-  .split('\n')
-  .filter((line, i, arr) => !(i === arr.length - 1 && line === ''));
-
 const escapeXml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-const padRight = (s, width) => (s.length >= width ? s.slice(0, width) : s + ' '.repeat(width - s.length));
-
-const downsampleAscii = (lines, targetCols, targetRows) => {
-  const srcRows = lines.length;
-  const srcCols = Math.max(...lines.map((l) => l.length), 1);
-  const grid = lines.map((l) => padRight(l, srcCols));
-  const out = [];
-  for (let r = 0; r < targetRows; r++) {
-    const srcR = Math.min(srcRows - 1, Math.floor(((r + 0.5) * srcRows) / targetRows));
-    let row = '';
-    for (let c = 0; c < targetCols; c++) {
-      const srcC = Math.min(srcCols - 1, Math.floor(((c + 0.5) * srcCols) / targetCols));
-      row += grid[srcR][srcC];
-    }
-    out.push(row);
-  }
-  return out;
-};
-
-const TARGET_COLS = 44;
-const TARGET_ROWS = 26;
-const asciiLines = downsampleAscii(rawAsciiLines, TARGET_COLS, TARGET_ROWS);
 
 const githubUser = process.env.GITHUB_USERNAME || 'chochkimhour';
 const FALLBACK_STATS = 'Repos: 8  |  Followers: 4  |  Following: 3';
@@ -105,7 +68,6 @@ const themes = {
     key: '#ffa657',
     value: '#a5d6ff',
     cc: '#616e7f',
-    ascii: '#c9d1d9',
     border: null,
   },
   light: {
@@ -114,7 +76,6 @@ const themes = {
     key: '#cf222e',
     value: '#0550ae',
     cc: '#8c959f',
-    ascii: '#24292f',
     border: '#d0d7de',
   },
 };
@@ -125,7 +86,7 @@ const buildRightPanel = (rightX, startY) => {
 
   const pushTitle = (label, dashes) => {
     parts.push(
-      `    <tspan x="${rightX}" y="${y}" fill="currentColor" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
+      `    <tspan x="${rightX}" y="${y}" class="title">${escapeXml(label)}</tspan><tspan class="cc"> ${'-'.repeat(dashes)}</tspan>`,
     );
   };
 
@@ -177,26 +138,13 @@ const buildSvg = (themeName) => {
   // Fixed layout numbers — do NOT depend on font metrics
   const pad = 20;
   const fontSize = 15;
-  const lineStep = 18;
-  // Force each ASCII line into this pixel width (GitHub-safe)
-  const asciiLineWidth = 400;
-  const leftX = pad;
-  const rightX = leftX + asciiLineWidth + 40;
+  const rightX = pad;
   const panelWidth = 500;
   const width = rightX + panelWidth + pad;
 
   const startY = pad + fontSize;
-  const asciiEndY = startY + (TARGET_ROWS - 1) * lineStep;
   const { parts: rightParts, endY: rightEndY } = buildRightPanel(rightX, startY);
-  const height = Math.ceil(Math.max(asciiEndY, rightEndY) + pad + 8);
-
-  // textLength + lengthAdjust forces exact column width even if font changes on GitHub
-  const asciiTspans = asciiLines
-    .map((line, i) => {
-      const y = startY + i * lineStep;
-      return `    <tspan x="${leftX}" y="${y}" textLength="${asciiLineWidth}" lengthAdjust="spacingAndGlyphs">${escapeXml(line)}</tspan>`;
-    })
-    .join('\n');
+  const height = Math.ceil(rightEndY + pad + 8);
 
   const border = t.border != null ? ` stroke="${t.border}" stroke-width="1"` : '';
 
@@ -204,9 +152,6 @@ const buildSvg = (themeName) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <rect width="${width}" height="${height}" fill="${t.bg}" rx="15"${border}/>
-  <text x="${leftX}" y="${startY}" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="${fontSize}" fill="${t.ascii}" xml:space="preserve">
-${asciiTspans}
-  </text>
   <text x="${rightX}" y="${startY}" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="${fontSize}" fill="${t.text}" xml:space="preserve">
 ${rightParts
   .join('\n')

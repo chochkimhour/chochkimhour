@@ -21,7 +21,7 @@ jobs:
 
       - name: Check required files exist
         run: |
-          for f in README.md assets/dark_mode.png assets/light_mode.png assets/choch_kimhour.txt; do
+          for f in README.md assets/dark_mode.png assets/light_mode.png; do
             if [ ! -f "$f" ]; then
               echo "Error: $f is missing"
               exit 1

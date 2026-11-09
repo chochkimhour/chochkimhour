@@ -7,7 +7,6 @@ const readmeFile = resolve(rootDir, 'README.md');
 const templateFile = resolve(rootDir, 'README.template.md');
 const darkPng = resolve(rootDir, 'assets/dark_mode.png');
 const lightPng = resolve(rootDir, 'assets/light_mode.png');
-const asciiFile = resolve(rootDir, 'assets/choch_kimhour.txt');
 
 const readRequiredFile = (filePath, label) => {
   if (!existsSync(filePath)) {
@@ -27,7 +26,6 @@ const assertIncludes = (content, label, requiredText) => {
 
 const readme = readRequiredFile(readmeFile, 'README.md');
 const template = readRequiredFile(templateFile, 'README.template.md');
-readRequiredFile(asciiFile, 'assets/choch_kimhour.txt');
 
 for (const [path, label] of [
   [darkPng, 'assets/dark_mode.png'],

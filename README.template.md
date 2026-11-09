@@ -1,7 +1,6 @@
 <!--
   GitHub profile README — Andrew6rant-style neofetch card
   Uses PNG (not SVG) so layout is identical on GitHub.
-  ASCII source: assets/choch_kimhour.txt
   Regenerate: npm run generate:all
 -->
 
